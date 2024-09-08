@@ -3,6 +3,10 @@ import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+import en from "../public/locales/en/translation.json"
+import tk from "../public/locales/tk/translation.json"
+import rs from "../public/locales/rs/translation.json"
+
 i18n
   .use(Backend)
   // detect user language
@@ -20,10 +24,14 @@ i18n
     },
     resources: {
       en: {
-        translation: {
-          // here we will place our translations...
-        },
+        translation: en
       },
+      tk: {
+        translation: tk
+      },
+      rs: {
+        translation: rs 
+      }
     },
   });
 

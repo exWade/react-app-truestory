@@ -2,8 +2,13 @@ import React from "react";
 import { profile } from "../../data/profile";
 import "../../index.scss";
 import "./Profile.scss";
+import { TFunction } from "i18next";
 
-const Profile = () => {
+interface ProfileProps {
+  t: TFunction;
+}
+
+const Profile: React.FC<ProfileProps> = ({ t }) => {
   if (window.innerWidth > 730.8) {
     document.getElementById("profile__about")?.setAttribute("open", "");
   } else {
@@ -55,7 +60,10 @@ const Profile = () => {
         </div>
 
         <details className="profile__about" id="profile__about">
-          <summary className="lng-about shortgray pb-[16px]"> About </summary>
+          <summary className="lng-about shortgray pb-[16px]">
+            {" "}
+            {t("about")}{" "}
+          </summary>
           <ul className="about__list" id="about-list">
             <li>• {profile.about.job}</li>
             <li>• {profile.about.age} y.o.</li>
@@ -71,15 +79,15 @@ const Profile = () => {
             <div className="counters__group-items">
               <div className="counter-box">
                 <div className="counter">{profile.cardsCount}</div>
-                <h3 className="shortgray lng-countersCards">Cards</h3>
+                <h3 className="shortgray">{t("countersCards")}</h3>
               </div>
               <div className="counter-box">
                 <div className="counter">{profile.followersCount}</div>
-                <h3 className="shortgray lng-countersFollowers">Followers</h3>
+                <h3 className="shortgray">{t("countersFollowers")}</h3>
               </div>
               <div className="counter-box">
                 <div className="counter">{profile.followingCount}</div>
-                <h3 className="shortgray lng-countersFollowing">Following</h3>
+                <h3 className="shortgray">{t("countersFollowing")}</h3>
               </div>
             </div>
             <div className="line"></div>

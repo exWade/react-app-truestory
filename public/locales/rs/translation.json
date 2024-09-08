@@ -1,44 +1,14 @@
 {
-    "search": {
-      "text": "Тражи нешто?"
-    },
-  
-    "about": {
-      "text": "О томе"
-    },
-  
-    "countersCards": {
-      "text": "Картице"
-    },
-  
-    "countersFollowers": {
-      "text": "Следбеника"
-    },
-  
-    "countersFollowing": {
-      "text": "Следећи"
-    },
-  
-    "creatingUnit": {
-      "text": "Прављење нове картице"
-    },
-    "creatingTitle": {
-      "text": "Наслов картице"
-    },
-    "creatingUrl": {
-      "text": "Слика линк"
-    },
-    "creatingDescription": {
-      "text": "Опис"
-    },
-    "creatingPlace": {
-      "text": "Место"
-    },
-    "creatingYear": {
-      "text": "Година"
-    },
-    "creatingBtn": {
-      "text": "Креирај"
-    }
-  }
-  
+  "search": "Тражи нешто?",
+  "about": "О томе",
+  "countersCards": "Картице",
+  "countersFollowers": "Следбеника",
+  "countersFollowing": "Следећи",
+  "creatingUnit": "Прављење нове картице",
+  "creatingTitle": "Наслов картице",
+  "creatingUrl": "Слика линк",
+  "creatingDescription": "Опис",
+  "creatingPlace": "Место",
+  "creatingYear": "Година",
+  "creatingBtn": "Креирај"
+}

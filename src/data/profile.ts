@@ -5,7 +5,7 @@ export const profile: IAccount = {
   "nickname": 'vileontev',
   "firstName": 'Vitaly',
   "photo": '../images/photoHH.jpg',
-  "status": '😘',
+  "status": '🎯',
   "about": {
     "job": 'Front-end developer',
     "age": 22,

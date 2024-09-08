@@ -1,43 +1,14 @@
 {
-  "search": {
-    "text": "Looking for something?"
-  },
-
-  "about": {
-    "text": "About"
-  },
-
-  "countersCards": {
-    "text": "Cards"
-  },
-
-  "countersFollowers": {
-    "text": "Followers"
-  },
-
-  "countersFollowing": {
-    "text": "Following"
-  },
-
-  "creatingUnit": {
-    "text": "Creating a new card"
-  },
-  "creatingTitle": {
-    "text": "Сard title"
-  },
-  "creatingUrl": {
-    "text": "Image link"
-  },
-  "creatingDescription": {
-    "text": "Description"
-  },
-  "creatingPlace": {
-    "text": "Place"
-  },
-  "creatingYear": {
-    "text": "Year"
-  },
-  "creatingBtn": {
-    "text": "Create"
-  }
+  "search": "Looking for something?",
+  "about": "About",
+  "countersCards": "Cards",
+  "countersFollowers": "Followers",
+  "countersFollowing": "Following",
+  "creatingUnit": "Creating a new card",
+  "creatingTitle": "Сard title",
+  "creatingUrl": "Image link",
+  "creatingDescription": "Description",
+  "creatingPlace": "Place",
+  "creatingYear": "Year",
+  "creatingBtn": "Create"
 }

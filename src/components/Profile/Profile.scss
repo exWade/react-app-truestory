@@ -51,6 +51,7 @@
         background-image: url('../../assets/profile_photo.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+        background-origin:content-box;
         background-position: center center;
         // transition: outline 0.5s ease;
   

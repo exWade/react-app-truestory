@@ -2,16 +2,37 @@ import React from "react";
 import "../../index.scss";
 import "./Header.scss";
 import { profile } from "../../data/profile";
-import { changeLanguage, t } from "i18next";
+import { i18n, TFunction } from "i18next";
 
 interface HeaderProps {
   searching: (query: string) => void;
+  i18n: i18n;
+  t: TFunction;
 }
 
-const Header: React.FC<HeaderProps> = ({ searching }) => {
+const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
+
+  const $langItems = document.getElementsByClassName('langs__item');
+  const switchLang = document.querySelector('.switch-lang');
+  const langArr = Array.from($langItems);
+  const allLangs = ['en', 'tk', 'rs'];
+
+
   const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     searching(e.target.value);
   };
+
+
+
+
+  const changeLanguage = (language: string) => {
+    switchLang?.classList.add(language);
+    i18n.changeLanguage(language);
+
+
+  };
+
+
 
   return (
     <header>
@@ -35,10 +56,18 @@ const Header: React.FC<HeaderProps> = ({ searching }) => {
                 >
                   <div className="flag en"></div> English
                 </li>
-                <li className="langs__item" data-lang="tk">
+                <li
+                  className="langs__item"
+                  data-lang="tk"
+                  onClick={() => changeLanguage("tk")}
+                >
                   <div className="flag tk"></div>Türkçe
                 </li>
-                <li className="langs__item" data-lang="rs">
+                <li
+                  className="langs__item"
+                  data-lang="rs"
+                  onClick={() => changeLanguage("rs")}
+                >
                   <div className="flag rs"></div>Српски
                 </li>
               </ul>
@@ -53,6 +82,7 @@ const Header: React.FC<HeaderProps> = ({ searching }) => {
                 type="text"
                 id="search-content"
                 onChange={handleSearchQuery}
+                placeholder={t("search") ? t("search") : "Search"}
                 className="header-search"
               ></input>
               <div className="magnifier"></div>

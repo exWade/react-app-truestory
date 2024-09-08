@@ -1,44 +1,14 @@
 {
-    "search": {
-      "text": "Bir şey mi arıyorsunuz?"
-    },
-  
-    "about": {
-      "text": "Hakkında"
-    },
-  
-    "countersCards": {
-      "text": "Kartlar"
-    },
-  
-    "countersFollowers": {
-      "text": "Takipçileri"
-    },
-  
-    "countersFollowing": {
-      "text": "Aşağıdaki"
-    },
-  
-    "creatingUnit": {
-      "text": "Yeni bir kart oluşturma"
-    },
-    "creatingTitle": {
-      "text": "Kart başlığını"
-    },
-    "creatingUrl": {
-      "text": "Resim bağlantısı"
-    },
-    "creatingDescription": {
-      "text": "Tanım"
-    },
-    "creatingPlace": {
-      "text": "Yer"
-    },
-    "creatingYear": {
-      "text": "Yıl"
-    },
-    "creatingBtn": {
-      "text": "Oluşturmak"
-    }
-  }
-  
+  "search": "Bir şey mi arıyorsunuz?",
+  "about": "Hakkında",
+  "countersCards": "Kartlar",
+  "countersFollowers": "Takipçileri",
+  "countersFollowing": "Aşağıdaki",
+  "creatingUnit": "Yeni bir kart oluşturma",
+  "creatingTitle": "Kart başlığını",
+  "creatingUrl": "Resim bağlantısı",
+  "creatingDescription": "Tanım",
+  "creatingPlace": "Yer",
+  "creatingYear": "Yıl",
+  "creatingBtn": "Oluşturmak"
+}

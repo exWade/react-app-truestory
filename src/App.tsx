@@ -9,16 +9,18 @@ function App() {
   const { t, i18n } = useTranslation();
   const [searched, setSearched] = useState<string>("");
 
+
+
   const handleSearchQuery = (searched: string) => {
     setSearched(searched);
   };
 
   return (
     <div className="min-h-screen">
-      <Header searching={handleSearchQuery} />
+      <Header searching={handleSearchQuery} i18n={i18n} t={t} />
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<ProfilePage searched={searched} />} />
+          <Route path="/" element={<ProfilePage searched={searched} t={t} />} />
         </Routes>
       </BrowserRouter>
     </div>
