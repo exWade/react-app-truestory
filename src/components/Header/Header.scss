@@ -1,0 +1,295 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  font-size: 32px;
+  background-color: var(--header-bg-color);
+  border-bottom: 2px solid var(--nav-input-color);
+  z-index: 10;
+
+  .header-container {
+    height: inherit;
+    width   : calc(1622px*0.9*0.9);
+    margin: auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding-left: 1.5vw;
+    padding-right: 1.9vw;
+
+    .header-logo-container {
+      display: flex;
+      letter-spacing: 1px;
+      align-items: center;
+      justify-self: flex-start;
+      color: var(--text-color);
+
+      height: inherit;
+      text-align: center;
+      text-transform: uppercase;
+      user-select: none;
+      /* transition: color .5s ease; */
+
+      .header-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+      }
+
+      .header-logo__camera {
+        height: 28px;
+        margin-right: 4px;
+        background-image: url("https://cdn-icons-png.flaticon.com/128/2965/2965705.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        filter: var(--inverting-icon-color);
+      }
+
+      .switch-lang {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        margin-left: 12px;
+        color: var(--text-color);
+        text-transform: uppercase;
+        user-select: none;
+        background-image: url("../../assets/languages/en_lang.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        .langs__layout {
+          display: none;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          width: 100px;
+          background-color: transparent;
+
+          .langs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: -120px;
+            height: auto;
+            width: auto;
+            display: none;
+            background-color: var(--bg-card-color);
+            transition: all 0.15s linear;
+
+            li:first-of-type::before {
+              content: "";
+              width: 0;
+              height: 0;
+              position: absolute;
+              top: -4px;
+              right: 50%;
+              transform: translate(50%, -50%);
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid var(--bg-card-color);
+              transition: all 0.15s linear;
+            }
+
+            li {
+              display: flex;
+              justify-content: start;
+              align-content: center;
+              padding: 8px;
+              width: 100%;
+              font-size: 16px;
+              text-transform: capitalize;
+              transition: all 0.15s linear;
+
+              &:first-of-type:hover::before {
+                border-bottom: 10px solid var(--lang-color);
+              }
+
+              &:hover {
+                background-color: var(--lang-color);
+              }
+            }
+
+            .flag {
+              width: 24px;
+              height: 24px;
+              margin-right: 8px;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+
+            &:hover {
+              display: flex;
+              transition: display 2s linear;
+            }
+          }
+
+          &:hover .langs {
+            display: flex;
+            transition: display 2s linear;
+          }
+        }
+
+        &:hover .langs__layout {
+          display: flex;
+        }
+
+        & .langs {
+          display: flex;
+          transition: display 2s linear;
+        }
+      }
+
+      .en {
+        background-image: url("../../assets/languages/en_lang.png");
+      }
+      .tk {
+        background-image: url("../../assets/languages/tk_lang.png");
+      }
+      .rs {
+        background-image: url("../../assets/languages/rs_lang.png");
+      }
+    }
+
+    .header-righside {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .form-search-container {
+        display: flex;
+        width: 200px;
+        height: inherit;
+        margin-right: 20px;
+
+        .search {
+          height: inherit;
+          width: inherit;
+          display: flex;
+          align-content: center;
+          align-items: center;
+          justify-content: end;
+          position: relative;
+          cursor: text;
+
+          .header-search {
+            outline: 2px solid transparent;
+            width: 200px;
+            border-radius: 4px;
+            position: relative;
+            user-select: none;
+            height: 26px;
+            border-style: none;
+            background-color: var(--nav-input-color);
+            color: var(--text-color);
+            font-size: 16px;
+            padding: 0px 30px 0 8px;
+
+            transition: outline-color 0.3s linear;
+            /* , background-color .5s ease */
+          }
+
+          .header-search .magnifier {
+            opacity: 1;
+          }
+
+          &:hover .header-search,
+          .header-search:focus {
+            outline: 2px solid var(--anchor-color);
+          }
+
+          input {
+            background: transparent;
+          }
+
+          .magnifier {
+            position: absolute;
+            opacity: 0.65;
+            right: 8px;
+            width: 16px;
+            height: 16px;
+            background-image: url("https://cdn-icons-png.flaticon.com/64/3031/3031293.png");
+            filter: var(--inverting-icon-color);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: transform 0.3s ease, opacity 0.3s linear;
+            /* filter .5s ease, */
+          }
+
+          &:hover .magnifier {
+            opacity: 1;
+          }
+        }
+      }
+
+      .switch-mode {
+        width: 22px;
+        height: 100%;
+        height: inherit;
+        cursor: pointer;
+        background-image: url("https://cdn-icons-png.flaticon.com/64/606/606795.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .switch-mode:hover {
+        transform: scale(1.15);
+      }
+
+      .switch-mode.drk {
+        background-image: url("https://cdn-icons-png.flaticon.com/64/3053/3053617.png");
+        filter: invert(1);
+      }
+
+      .header-info__mini {
+        user-select: none;
+        pointer-events: none;
+        // border-left: 1px solid var(--nav-input-color);
+        /* border-right: 1px solid var(--bg-card-color); */
+        height: 100%;
+        max-width: 170px;
+        padding: 0 0px 0 10px;
+        /* padding: 0 16px; */
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+        /* background-color: var(--bg-card-color); */
+
+        .avatar-mini {
+          width: 30px;
+          height: 30px;
+          margin-right: 12px;
+          border-radius: 50%;
+          background-image: url("../../assets/profile_photo.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+
+        .nickname-mini {
+          overflow: hidden;
+          white-space: nowrap;
+          width: auto;
+          text-overflow: ellipsis;
+          text-align: justify;
+          font-size: 16px;
+          letter-spacing: 2.5px;
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+}

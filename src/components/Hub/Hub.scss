@@ -1,0 +1,39 @@
+.add-Btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--anchor-color);
+  color: var(--bg-color);
+
+  &:hover {
+    background-color: var(--text-color);
+    transition: background-color 0.1s ease;
+  }
+}
+
+.progress {
+  opacity: 0;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: conic-gradient(rgb(153, 67, 67) 0deg, var(--anchor-color) 0deg);
+  transition: opacity 0.3s;
+
+  .toTop-Btn {
+    width: 85%;
+    height: 85%;
+    background-color: var(--anchor-color);
+    color: var(--bg-color);
+
+    &:hover {
+      background-color: var(--text-color);
+      transition: background-color 0.1s ease;
+    }
+  }
+}

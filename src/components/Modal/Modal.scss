@@ -1,0 +1,180 @@
+
+@keyframes zoomModal {
+    from {
+      -webkit-transform: scale(0.4);
+      -moz-transform   : scale(0.4);
+      -o-transform     : scale(0.4);
+      transform        : scale(0.4) translateZ(0);
+          filter: blur(0px);
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          will-change: transform;
+    }
+  
+    to {
+      -webkit-transform: scale(1);
+      -moz-transform   : scale(1);
+      -o-transform     : scale(1);
+          transform        : scale(1);
+    }
+  }
+  
+  
+  .modal {
+      display: flex;
+      position: fixed;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #000000;
+      background-color: rgba(0,0,0,0.8);
+  
+      .modal-whiteboard {
+          position: relative;
+          margin: auto;
+          width: 80vw;
+          height: 90.1vh;
+          border-radius: 16px;
+          color: var(--text-color);
+          background-color: var( --bg-card-color);
+          z-index: 20000;
+          -webkit-animation-name: zoomModal;
+          -moz-animation-name: zoomModal;
+          -o-animation-name: zoomModal;
+          animation-name: zoomModal;
+          -webkit-animation-duration: 0.25s;
+          -moz-animation-duration: 0.25s;
+          -o-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+          will-change: transform;
+          transition: all;
+  
+          .whiteboard-container {
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              height: 90.1vh;
+              overflow: hidden;
+              transition: all;
+  
+              .modal-left-side {
+                  display: block;
+                  width: 65.05%;
+                  height: 90.1vh;
+                  border-radius: 16px 0px 0px 16px;
+                  
+                  background-position: center center;
+                  background-size: 200%;
+                  background-repeat: no-repeat;
+                  will-change: transform;
+                  -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+                  user-select: none;
+                  overflow: hidden;
+                  
+                  .modalImage-container {
+                      position: relative;
+                      display: flex;
+                      
+                      height: 100%;
+                      width: 100.05%;
+                      pointer-events: none;
+                      overflow: hidden;
+                      will-change: transform;
+                      background-color: rgba(0, 20, 33, 0.5);
+                      -webkit-backdrop-filter: blur(30px);
+                      backdrop-filter: blur(30px);
+  
+                      .modal-content-image {
+                          height: 90.1vh;
+                          width: 100.05%;
+                          object-fit: contain;
+                          overflow: hidden;
+                          background-repeat: no-repeat;	
+                          will-change: transform;
+                      }
+                  }
+              }
+  
+              .modal-right-side {
+                  display: block;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  height: inherit;
+                  width: 33.5%;
+                  float: right;
+                  padding: 24px 24px 24px 0;
+                  overflow-y:overlay;
+                  scrollbar-gutter: stable;
+                  
+                  .image-title {
+                      font-size: 48px;
+                      margin-bottom: 16px;
+                      word-wrap: break-word;
+                      word-break: keep-all;
+                      width: 100%;
+                      line-height: 1.3em;
+                  }
+  
+                  .modalImage-caption {
+                      word-wrap: break-word;
+                      word-break: keep-all;
+                      font-size: 24px;
+                      width: 100%;
+                  }
+              }
+          }
+      }
+  }
+  
+  .close {
+      user-select: none;
+      position: absolute;
+      top: -24px;
+      right: -70px;
+      padding: 0 16px;
+      color: #d0d3d88f;
+      font-size: 48px;
+      font-weight: bold;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+      cursor: pointer;
+  
+      &:hover{
+          color: brown !important;
+      }
+  }
+  
+  .modal-whiteboard:hover{
+      cursor: default;
+  }
+  
+  .modal:hover {
+      cursor: pointer;
+  }
+  
+  .modal:hover .close {
+      color: brown;
+  }
+  
+  .modal-whiteboard:hover .close {
+      color: #d0d3d88f;
+  }
+  
+  .static-cards {
+      height: 20vh;
+      background-image: url('../images/photo_cards.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      transition: all .3s ease;
+  }

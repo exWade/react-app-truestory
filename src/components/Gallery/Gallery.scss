@@ -1,0 +1,33 @@
+.workspace {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: baseline;
+  width: calc(1622px * 0.9 * 0.9); /* 76vw */
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all;
+
+  .photo-card {
+    margin-right: calc(40px * 0.9 * 0.9);
+    margin-bottom: calc(40px * 0.9 * 0.9);
+
+    &:nth-of-type(4n) {
+      margin-right: 0px;
+    }
+
+    &:hover {
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      transform: scale(1.05);
+
+      -webkit-transition: transform 0.15s linear;
+      -moz-transition: transform 0.15s linear;
+      -o-transition: transform 0.15s linear;
+      transition: transform 0.15s linear;
+    }
+  }
+}

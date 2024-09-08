@@ -1,0 +1,44 @@
+{
+    "search": {
+      "text": "Тражи нешто?"
+    },
+  
+    "about": {
+      "text": "О томе"
+    },
+  
+    "countersCards": {
+      "text": "Картице"
+    },
+  
+    "countersFollowers": {
+      "text": "Следбеника"
+    },
+  
+    "countersFollowing": {
+      "text": "Следећи"
+    },
+  
+    "creatingUnit": {
+      "text": "Прављење нове картице"
+    },
+    "creatingTitle": {
+      "text": "Наслов картице"
+    },
+    "creatingUrl": {
+      "text": "Слика линк"
+    },
+    "creatingDescription": {
+      "text": "Опис"
+    },
+    "creatingPlace": {
+      "text": "Место"
+    },
+    "creatingYear": {
+      "text": "Година"
+    },
+    "creatingBtn": {
+      "text": "Креирај"
+    }
+  }
+  
