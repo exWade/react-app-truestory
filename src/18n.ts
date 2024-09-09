@@ -3,9 +3,9 @@ import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import en from "../public/locales/en/translation.json"
-import tk from "../public/locales/tk/translation.json"
-import rs from "../public/locales/rs/translation.json"
+import en from "../public/locales/en/translation.json";
+import tk from "../public/locales/tk/translation.json";
+import rs from "../public/locales/rs/translation.json";
 
 i18n
   .use(Backend)
@@ -18,20 +18,21 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     debug: true,
-    fallbackLng: "en", // default language
+    fallbackLng: 'en', // default language
+    supportedLngs: ['en', 'tk', 'rs'],
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
       en: {
-        translation: en
+        translation: en,
       },
       tk: {
-        translation: tk
+        translation: tk,
       },
       rs: {
-        translation: rs 
-      }
+        translation: rs,
+      },
     },
   });
 

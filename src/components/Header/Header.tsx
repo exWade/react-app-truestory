@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../index.scss";
 import "./Header.scss";
 import { profile } from "../../data/profile";
@@ -11,35 +11,51 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
-
-  const $langItems = document.getElementsByClassName('langs__item');
-  const switchLang = document.querySelector('.switch-lang');
-  const langArr = Array.from($langItems);
-  const allLangs = ['en', 'tk', 'rs'];
-
-
   const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     searching(e.target.value);
   };
 
+  useEffect(() => {
+    const switchLang = document.querySelector(".switch-lang");
 
+    const initializeLanguage = (language: string) => {
+      for (let i = 0; i < i18n.languages.length; i++) {
+        switchLang?.classList.remove(i18n.languages[i]);
+      }
 
+      switchLang?.classList.add(language);
+      // console.log("Initialize Lang");
+    };
 
-  const changeLanguage = (language: string) => {
-    switchLang?.classList.add(language);
-    i18n.changeLanguage(language);
+    // const changeLanguage = (language: string) => {
+    //   if (language !== i18n.language) {
+    //     switchLang?.classList.add(language);
+    //     i18n.changeLanguage(language);
+    //     console.log(i18n.languages);
+    //   }
+    //   else {
+    //     console.log("change lang equals");
+    //   }
+    // };
 
+    initializeLanguage(i18n.resolvedLanguage || "en");
+    console.log(i18n.resolvedLanguage, "resolvedLang");
+    return () => {};
+  }, []);
 
+  const changeLang = (language: string) => {
+    if (language !== i18n.language) {
+      switchLang?.classList.remove(i18n.language);
+      switchLang?.classList.add(language);
+      i18n.changeLanguage(language);
+    }
   };
-
-
 
   return (
     <header>
       <div className="header-container">
         <div className="header-logo-container">
           <a className="header-logo" href="." id="truestory-logo">
-            {" "}
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
@@ -52,21 +68,21 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                 <li
                   className="langs__item"
                   data-lang="en"
-                  onClick={() => changeLanguage("en")}
+                  onClick={() => changeLang("en")}
                 >
                   <div className="flag en"></div> English
                 </li>
                 <li
                   className="langs__item"
                   data-lang="tk"
-                  onClick={() => changeLanguage("tk")}
+                  onClick={() => changeLang("tk")}
                 >
                   <div className="flag tk"></div>Türkçe
                 </li>
                 <li
                   className="langs__item"
                   data-lang="rs"
-                  onClick={() => changeLanguage("rs")}
+                  onClick={() => changeLang("rs")}
                 >
                   <div className="flag rs"></div>Српски
                 </li>
