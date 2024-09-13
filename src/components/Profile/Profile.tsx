@@ -15,8 +15,8 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <>
-      <section className="background__container">
+    <div className="container mx-auto mt-24">
+      <section className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
         <div
           className="background__image"
           style={{ backgroundImage: `url(${profile.backgroundImage})` }}
@@ -24,8 +24,8 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
       </section>
 
       <section className="profile" id="profile-js">
-        <div className="profile__main">
-          <div className="profile__avatar">
+        <div className="profile__main h-[240px]">
+          <div className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]">
             <div className="profile__status">
               <span className="text-2xl leading-8">{profile.status}</span>
             </div>
@@ -59,10 +59,9 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
           </div>
         </div>
 
-        <details className="profile__about" id="profile__about">
+        <details className="profile__about hidden xl:block lg:block md:hidden sm:hidden" id="profile__about">
           <summary className="lng-about shortgray pb-[16px]">
-            {" "}
-            {t("about")}{" "}
+            {t("about")}
           </summary>
           <ul className="about__list" id="about-list">
             <li>• {profile.about.job}</li>
@@ -76,17 +75,17 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
 
         <div className="counters">
           <div className="counters__group">
-            <div className="counters__group-items">
-              <div className="counter-box">
-                <div className="counter">{profile.cardsCount}</div>
+            <div className="counters__group-items flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col xl:w[280px] lg:w-[280px] md:w-[200px] sm:w-[160px]">
+              <div className="counter-box self-start">
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.cardsCount}</div>
                 <h3 className="shortgray">{t("countersCards")}</h3>
               </div>
-              <div className="counter-box">
-                <div className="counter">{profile.followersCount}</div>
+              <div className="counter-box self-start">
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.followersCount}</div>
                 <h3 className="shortgray">{t("countersFollowers")}</h3>
               </div>
-              <div className="counter-box">
-                <div className="counter">{profile.followingCount}</div>
+              <div className="counter-box self-start">
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.followingCount}</div>
                 <h3 className="shortgray">{t("countersFollowing")}</h3>
               </div>
             </div>
@@ -94,7 +93,7 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

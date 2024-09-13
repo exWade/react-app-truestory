@@ -53,14 +53,14 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
 
   return (
     <header>
-      <div className="header-container">
-        <div className="header-logo-container">
+      <div className="header-container container">
+        <div className="header-logo-container px-2">
           <a className="header-logo" href="." id="truestory-logo">
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
             ></img>{" "}
-            <span>Truestory</span>{" "}
+            <span className="hidden xl:inline lg:inline md:inline sm:hidden">Truestory</span>{" "}
           </a>
           <div className="switch-lang" id="switchLang">
             <div className="langs__layout">
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           </div>
         </div>
 
-        <div className="header-righside">
+        <div className="header-righside pr-2">
           <div className="form-search-container">
             <div className="search">
               <input
@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                 id="search-content"
                 onChange={handleSearchQuery}
                 placeholder={t("search") ? t("search") : "Search"}
-                className="header-search"
+                className="header-search w-[175px] xl:w-[200px] lg:w-[200px] md:w-[200px] sm:w-[175px]"
               ></input>
               <div className="magnifier"></div>
             </div>

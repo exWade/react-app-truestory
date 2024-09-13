@@ -1,4 +1,4 @@
-import "./resolutions.scss";
+// import "./resolutions.scss";
 import Header from "./components/Header/Header.tsx";
 import ProfilePage from "./pages/ProfilePage.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

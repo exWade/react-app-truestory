@@ -1,9 +1,9 @@
 header {
   display: flex;
   justify-content: flex-end;
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw !important;
   height: 64px;
   font-size: 32px;
   background-color: var(--header-bg-color);
@@ -12,13 +12,13 @@ header {
 
   .header-container {
     height: inherit;
-    width   : calc(1622px*0.9*0.9);
+    width : calc(1622px*0.9*0.9);
     margin: auto;
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding-left: 1.5vw;
-    padding-right: 1.9vw;
+    // padding-left: 1.5vw;
+    // padding-right: 1.9vw;
 
     .header-logo-container {
       display: flex;
@@ -168,13 +168,13 @@ header {
 
       .form-search-container {
         display: flex;
-        width: 200px;
+        width: auto;
         height: inherit;
         margin-right: 20px;
 
         .search {
           height: inherit;
-          width: inherit;
+          width: 200px;
           display: flex;
           align-content: center;
           align-items: center;
@@ -184,13 +184,13 @@ header {
 
           .header-search {
             outline: 2px solid transparent;
-            width: 200px;
+            max-width: 200px;
             border-radius: 4px;
             position: relative;
             user-select: none;
             height: 26px;
             border-style: none;
-            background-color: var(--nav-input-color);
+            background-color: var(--bg-color);
             color: var(--text-color);
             font-size: 16px;
             padding: 0px 30px 0 8px;

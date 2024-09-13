@@ -1,11 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Hub.scss";
+import { ModalContext } from "../../context/ModalContext";
 
 const Hub = () => {
-    console.log('render');
+
+  const {  openCreate } = useContext(ModalContext);
+
+
+  console.log("render");
   useEffect(() => {
     const progressBar = document.getElementById("progBar");
-    console.log('useEffect render')
+    console.log("useEffect render");
+
     function toTopHide() {
       if (
         document.body.scrollTop > 200 ||
@@ -32,11 +38,6 @@ const Hub = () => {
       }
     }
 
-    // function toTop() {
-    //   document.body.scrollTop = 0; // For Safari
-    //   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    // }
-
     // Вызываем функции при первой загрузке страницы
     toTopHide();
     progressStatus();
@@ -45,7 +46,7 @@ const Hub = () => {
     window.addEventListener("scroll", toTopHide);
     window.addEventListener("scroll", progressStatus);
 
-    // Удаляем обработчики при размонтировании компонента для избежания
+    // Удаляем обработчики при размонтировании компонента для избежания утечек памяти
     return () => {
       window.removeEventListener("scroll", toTopHide);
       window.removeEventListener("scroll", progressStatus);
@@ -54,7 +55,7 @@ const Hub = () => {
 
   return (
     <>
-    {console.log('return')}
+      {console.log("return")}
       <div
         className="progress fixed bottom-[85px] right-6"
         id="progBar"
@@ -73,10 +74,11 @@ const Hub = () => {
 
       <button
         className=" add-Btn fixed bottom-4 right-6 rounded-full text-white text-2xl select-none"
-        // onClick={openCreate}
+        onClick={openCreate}
       >
         +
       </button>
+
     </>
   );
 };

@@ -1,18 +1,22 @@
 .workspace {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: baseline;
-  width: calc(1622px * 0.9 * 0.9); /* 76vw */
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // align-items: center;
+  // justify-content: baseline;
+
+  // display: grid;
+  // grid-column: 4;
+  width: 100%;
+  max-width: calc(1622px * 0.9 * 0.9); /* 76vw */
   margin-top: 24px;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   transition: all;
 
   .photo-card {
-    margin-right: calc(40px * 0.9 * 0.9);
-    margin-bottom: calc(40px * 0.9 * 0.9);
+    // margin-right: calc(40px * 0.9 * 0.9);
+    // margin-bottom: calc(40px * 0.9 * 0.9);
 
     &:nth-of-type(4n) {
       margin-right: 0px;

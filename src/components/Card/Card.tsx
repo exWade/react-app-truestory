@@ -4,15 +4,15 @@ import './Card.scss'
 
 interface CardProps {
   card: ICard
-  openModal: CallableFunction
+  
   onModal: CallableFunction
 }
 
-export function Card({ card, openModal, onModal }: CardProps) {
+export function Card({ card, onModal }: CardProps) {
 
   const handleModalOpening = (cardState: ICard) => {
     onModal(cardState);
-    openModal();
+
   }
 
   return (

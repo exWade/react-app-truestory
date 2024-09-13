@@ -1,6 +1,5 @@
 import { ICard } from '../../types/models'
 import './Modal.scss'
-import '../styles/resolutions.scss'
 
 interface ModalProps {
   card: ICard | undefined
