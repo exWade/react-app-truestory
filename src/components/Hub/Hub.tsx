@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Hub.scss";
 import { ModalContext } from "../../context/ModalContext";
-import CreateCardModal from "../CreateCard/CreateCardModal";
-import CreateCard from "../CreateCard/CreateCard";
-import { cards } from "../../data/cards";
-import { ICard } from "../../types/models";
+
 
 const Hub = () => {
 

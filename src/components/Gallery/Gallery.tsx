@@ -53,13 +53,6 @@ export function Gallery({ searched }: GalleryProps) {
           <div
             className="photo-card mb-4 xl:mb-0 lg:mb-0 md:mb-0 sm:mb-0"
             key={card.id}
-
-            // draggable={true}
-            // onDragStart={(e: any) => dragStartHandler(e, card)}
-            // onDragLeave={(e: any) => dragLeaveHandler(e)}
-            // onDragEnd={(e: any) => dragEndHandler(e)}
-            // onDragOver={(e: any) => dragOverHandler(e)}
-            // onDrop={(e: any) => dropHandler(e, card)}
           >
             <Card
               card={card}
