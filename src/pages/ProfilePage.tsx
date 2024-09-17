@@ -15,7 +15,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ searched, t }) => {
 
 
   return (
-    <div className="page">
+    <div>
       <Profile t={t} />
       <Gallery searched={searched} />
       <Hub/>

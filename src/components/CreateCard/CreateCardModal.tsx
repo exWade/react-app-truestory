@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import "../Modal/Modal.scss";
 
-const CreateCardModal = ({ children }: { children: React.ReactNode }) => {
-  const { closeCreate } = useContext(ModalContext);
+const CreateCardModal = ({children}: {children: React.ReactNode}) => {
+    const { closeCreate } = useContext(ModalContext);
 
   return (
     <>

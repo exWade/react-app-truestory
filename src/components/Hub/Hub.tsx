@@ -1,17 +1,21 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Hub.scss";
 import { ModalContext } from "../../context/ModalContext";
+import CreateCardModal from "../CreateCard/CreateCardModal";
+import CreateCard from "../CreateCard/CreateCard";
+import { cards } from "../../data/cards";
+import { ICard } from "../../types/models";
 
 const Hub = () => {
 
-  const {  openCreate } = useContext(ModalContext);
+  const { openCreate } = useContext(ModalContext);
 
 
   console.log("render");
   useEffect(() => {
     const progressBar = document.getElementById("progBar");
     console.log("useEffect render");
-
+    
     function toTopHide() {
       if (
         document.body.scrollTop > 200 ||
@@ -37,6 +41,11 @@ const Hub = () => {
         progressBar!.style.background = `conic-gradient(rgb(153, 67, 67) ${progressPercents}deg,  var(--anchor-color) 0deg`;
       }
     }
+
+    // function toTop() {
+    //   document.body.scrollTop = 0; // For Safari
+    //   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    // }
 
     // Вызываем функции при первой загрузке страницы
     toTopHide();
@@ -78,7 +87,6 @@ const Hub = () => {
       >
         +
       </button>
-
     </>
   );
 };
