@@ -6,16 +6,17 @@ import { TFunction } from "i18next";
 
 interface ProfileProps {
   t: TFunction;
+  counted: number;
 }
 
-const Profile: React.FC<ProfileProps> = ({ t }) => {
+const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
   if (window.innerWidth > 730.8) {
     document.getElementById("profile__about")?.setAttribute("open", "");
   } else {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <div className="container mx-auto mt-24">
+    <div className="mt-24">
       <section className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
         <div
           className="background__image"
@@ -77,7 +78,7 @@ const Profile: React.FC<ProfileProps> = ({ t }) => {
           <div className="counters__group">
             <div className="counters__group-items flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col xl:w[280px] lg:w-[280px] md:w-[200px] sm:w-[160px]">
               <div className="counter-box self-start">
-                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.cardsCount}</div>
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{counted}</div>
                 <h3 className="shortgray">{t("countersCards")}</h3>
               </div>
               <div className="counter-box self-start">

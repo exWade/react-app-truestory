@@ -1,7 +1,7 @@
 .add-Btn {
   width: 55px;
   height: 55px;
-  border-radius: 50%;
+  border-radius: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,11 +18,11 @@
   opacity: 0;
   width: 55px;
   height: 55px;
-  border-radius: 50%;
+  border-radius: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: conic-gradient(rgb(153, 67, 67) 0deg, var(--anchor-color) 0deg);
+  background: conic-gradient(rgb(111, 111, 111) 0deg, var(--anchor-color) 0deg);
   transition: opacity 0.3s;
 
   .toTop-Btn {

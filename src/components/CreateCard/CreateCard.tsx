@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { ICard } from "../../types/models";
 import { cards } from "../../data/cards";
-import "./CreateCard.scss"
+import "./CreateCard.scss";
+import { TFunction } from "i18next";
 
 interface CreateCardProps {
   onCreate: (card: ICard) => void;
+  t: TFunction;
 }
 
-const CreateCard = ({ onCreate }: CreateCardProps) => {
+const CreateCard = ({ onCreate, t }: CreateCardProps) => {
   const today = new Date();
 
   const [data, setData] = useState<ICard>({
@@ -37,7 +39,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
     <div className="sides flex flex-row items-center transition-all overflow-hidden">
       <div className="mdl-title flex flex-col w-[24vw] mr-[8vw] transition-all ">
         <h1 className=" lng-creatingUnit text-4xl mb-[2vh] text-center transition-all select-none">
-          Creating a new card
+          {t("creatingUnit")}
         </h1>
         <div className="w-[100%] h-[100%] transition-all">
           <div className="self-center select-none static-cards" />
@@ -51,7 +53,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
         className="form flex flex-col w-[24vw] transition-all"
       >
         <h2 className="lng-creatingTitle mb-1 pl-1 font-bold tracking-wider">
-          Card title
+          {t("creatingTitle")}
         </h2>
         <input
           type="text"
@@ -66,7 +68,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
         />
 
         <h2 className="lng-creatingUrl mb-1 pl-1 font-bold tracking-wider">
-          Image link
+          {t("creatingUrl")}
         </h2>
         <input
           type="url"
@@ -78,7 +80,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
           required
         />
         <h2 className="lng-creatingDescription mb-1 pl-1 font-bold tracking-wider">
-          Description
+          {t("creatingDescription")}
         </h2>
         <textarea
           name="description"
@@ -95,7 +97,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
           maxLength={500}
         />
         <h2 className="lng-creatingPlace mb-1 pl-1 font-bold tracking-wider">
-          Place
+          {t("creatingPlace")}
         </h2>
         <input
           type="text"
@@ -109,7 +111,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
           required
         />
         <h2 className="lng-creatingYear mb-1 pl-1 font-bold tracking-wider">
-          Year
+          {t("creatingYear")}
         </h2>
         <input
           type="number"
@@ -129,7 +131,7 @@ const CreateCard = ({ onCreate }: CreateCardProps) => {
           value="create"
           className="lng-creatingBtn font-bold mt-4 py-2 px-3 rounded-lg bg-emerald-500 w-[45%] self-center text-gray-100 hover:w-[100%] transition-all delay-200 duration-300 ease-out text-black"
         >
-          Create
+          {t("creatingBtn")}
         </button>
       </form>
     </div>

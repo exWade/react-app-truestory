@@ -8,8 +8,7 @@ import { useTranslation } from "react-i18next";
 function App() {
   const { t, i18n } = useTranslation();
   const [searched, setSearched] = useState<string>("");
-
-
+  
 
   const handleSearchQuery = (searched: string) => {
     setSearched(searched);

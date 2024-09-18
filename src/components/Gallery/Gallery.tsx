@@ -9,16 +9,22 @@ import { ModalContext } from "../../context/ModalContext";
 import { Modal } from "../Modal/Modal";
 import CreateCardModal from "../CreateCard/CreateCardModal";
 import CreateCard from "../CreateCard/CreateCard";
+import { TFunction } from "i18next";
 
 interface GalleryProps {
   searched: string;
+  counting: CallableFunction;
+  t: TFunction;
 }
 
-export function Gallery({ searched }: GalleryProps) {
+export function Gallery({ searched, counting, t }: GalleryProps) {
   const { modal, open, close } = useContext(ModalContext);
   const [modalState, setModalState] = useState<ICard>();
   const { modalCreate, closeCreate } = useContext(ModalContext);
   const [photocards, setPhotocards] = useState([...cards]);
+
+  
+  
 
   const createHandler = (card: ICard) => {
     setPhotocards((prev) => [card, ...prev]);
@@ -41,10 +47,18 @@ export function Gallery({ searched }: GalleryProps) {
     return photocards;
   }
 
+  // ПОДСЧЁТ КАРТОЧЕК
+  const handleCountQuery = (e: number) => {
+    counting(e);
+  }
+
   const searchedCards = useMemo(getSearchedCards, [searched, photocards]);
 
+  handleCountQuery(searchedCards.length);
+
+
   return (
-    <div className="container mx-auto">
+    <div className="">
       <section
         className="workspace mx-auto justify-items-center grid xl:grid-cols-4 xl:gap-8 lg:grid-cols-3 lg:gap-6 md:grid-cols-2 md:gap-4 sm:grid-cols-1 sm:gap-4"
         id="wrkspc"
@@ -67,7 +81,7 @@ export function Gallery({ searched }: GalleryProps) {
 
       {modalCreate && (
         <CreateCardModal>
-          <CreateCard onCreate={createHandler} />
+          <CreateCard t={t} onCreate={createHandler} />
         </CreateCardModal>
       )}
       

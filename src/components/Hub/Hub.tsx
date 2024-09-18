@@ -35,7 +35,7 @@ const Hub = () => {
         document.documentElement.clientHeight; // минусуя уже отображенную пользователю часть страницы
       const progressPercents = (windowScroll / windowHeight) * 360;
       if (progressBar) {
-        progressBar!.style.background = `conic-gradient(rgb(153, 67, 67) ${progressPercents}deg,  var(--anchor-color) 0deg`;
+        progressBar!.style.background = `conic-gradient(rgb(111, 111, 111) ${progressPercents}deg,  var(--anchor-color) 0deg`;
       }
     }
 
@@ -68,7 +68,7 @@ const Hub = () => {
         style={{ background: "conic-gradient(rgb(153, 67, 67)" }}
       >
         <button
-          className="toTop-Btn rounded-full text-white text-2xl px-4 select-none"
+          className="toTop-Btn rounded-[25%] text-white text-2xl px-4 select-none"
           onClick={() => {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

@@ -28,20 +28,20 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 
   const open = () => {
     setModal(true);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
   const close = () => {
     setModal(false);
-    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   };
 
   const openCreate = () => {
     setModalCreate(true);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
   const closeCreate = () => {
     setModalCreate(false);
-    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   };
 
   return (

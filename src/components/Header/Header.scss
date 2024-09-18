@@ -168,13 +168,13 @@ header {
 
       .form-search-container {
         display: flex;
-        width: auto;
+        // width: 200px;
         height: inherit;
         margin-right: 20px;
-
+        justify-content: center;
         .search {
           height: inherit;
-          width: 200px;
+          width: inherit;
           display: flex;
           align-content: center;
           align-items: center;
@@ -184,7 +184,7 @@ header {
 
           .header-search {
             outline: 2px solid transparent;
-            max-width: 200px;
+            width: inherit;
             border-radius: 4px;
             position: relative;
             user-select: none;
