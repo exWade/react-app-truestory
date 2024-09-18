@@ -4,7 +4,7 @@ import { Card } from "../Card/Card";
 import { cards } from "../../data/cards";
 import { ICard } from "../../types/models";
 import { Loader } from "../Loader/Loader";
-import { useContext, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import { Modal } from "../Modal/Modal";
 import CreateCardModal from "../CreateCard/CreateCardModal";
@@ -23,8 +23,14 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
   const { modalCreate, closeCreate } = useContext(ModalContext);
   const [photocards, setPhotocards] = useState([...cards]);
 
-  
-  
+  useEffect(() => {
+    // ПОДСЧЁТ КАРТОЧЕК
+    const handleCountQuery = (e: number) => {
+      counting(e);
+    };
+
+    handleCountQuery(searchedCards.length);
+  }, [getSearchedCards]);
 
   const createHandler = (card: ICard) => {
     setPhotocards((prev) => [card, ...prev]);
@@ -47,15 +53,8 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
     return photocards;
   }
 
-  // ПОДСЧЁТ КАРТОЧЕК
-  const handleCountQuery = (e: number) => {
-    counting(e);
-  }
-
+  // РАЗОБРАТЬСЯ С useMemo
   const searchedCards = useMemo(getSearchedCards, [searched, photocards]);
-
-  handleCountQuery(searchedCards.length);
-
 
   return (
     <div className="">
@@ -84,7 +83,7 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
           <CreateCard t={t} onCreate={createHandler} />
         </CreateCardModal>
       )}
-      
+
       {/* <Messages />  */}
       <Loader />
     </div>
