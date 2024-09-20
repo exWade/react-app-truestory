@@ -3,6 +3,8 @@ import "../../index.scss";
 import "./Header.scss";
 import { profile } from "../../data/profile";
 import { i18n, TFunction } from "i18next";
+import { useTheme } from "../../providers/ThemeProvider";
+// import useTheme from "../../hooks/useTheme";
 
 interface HeaderProps {
   searching: (query: string) => void;
@@ -11,12 +13,39 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
+
   const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     searching(e.target.value);
   };
 
+  // Temnaya temka
+  const { theme, toggleTheme } = useTheme();
+
+
+  // const btn = document.querySelector(".switch-mode");
+  // const currentTheme = localStorage.getItem("theme");
+
+  // if (currentTheme === "dark") {
+  //   setIsDark(true);
+  //   btn?.classList.add("drk");
+  //   document.querySelector(".layout")?.classList.add("dark");
+  // }
+  // let theme = "light";
+
+  // btn?.addEventListener("click", function () {
+  //   if (theme === 'light') {
+  //     btn?.classList.add("drk");
+  //   } 
+  //   else {
+  //     btn?.classList.remove("drk");
+  //   }
+
+  // })
+
   useEffect(() => {
     const switchLang = document.querySelector(".switch-lang");
+
+   
 
     const initializeLanguage = (language: string) => {
       for (let i = 0; i < i18n.languages.length; i++) {
@@ -50,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       i18n.changeLanguage(language);
     }
   };
-
+ 
   return (
     <header>
       <div className="header-container container">
@@ -60,7 +89,9 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
             ></img>{" "}
-            <span className="hidden xl:inline lg:inline md:inline sm:hidden">Truestory</span>{" "}
+            <span className="hidden xl:inline lg:inline md:inline sm:hidden">
+              Truestory
+            </span>{" "}
           </a>
           <div className="switch-lang" id="switchLang">
             <div className="langs__layout">
@@ -104,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
               <div className="magnifier"></div>
             </div>
           </div>
-          <div className="switch-mode" id="switch-mode"></div>
+          <div className="switch-mode" id="switch-mode" onClick={toggleTheme}></div>
 
           <div className="header-info__mini">
             <div className="avatar-mini"></div>
@@ -113,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
         </div>
       </div>
     </header>
-  );
-};
+  )}
+
 
 export default Header;

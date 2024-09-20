@@ -1,10 +1,12 @@
 import { IAccount } from '../types/models'
 import { cards } from './cards'
+import backgroundImage from '../assets/background2.jpg';
+import profilePhoto from '../assets/profile_photo.jpg'
 
 export const profile: IAccount = {
   "nickname": 'vileontev',
   "firstName": 'Vitaly',
-  "photo": '../images/photoHH.jpg',
+  "photo": profilePhoto,
   "status": '🎯',
   "about": {
     "job": 'Front-end developer',
@@ -14,7 +16,7 @@ export const profile: IAccount = {
       "country": 'Russia'
     }
   },
-  "backgroundImage": 'https://images.unsplash.com/photo-1603350929754-7faba95e062c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2104&q=80',
+  "backgroundImage": backgroundImage,
   "cardsCount": cards.length,
   "followersCount": 3065,
   "followingCount": 52

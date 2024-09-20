@@ -26,7 +26,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
 
       <section className="profile" id="profile-js">
         <div className="profile__main h-[240px]">
-          <div className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]">
+          <div className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]" style={{backgroundImage: `url(${profile.photo}`}}>
             <div className="profile__status">
               <span className="text-2xl leading-8">{profile.status}</span>
             </div>

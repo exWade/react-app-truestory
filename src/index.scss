@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  // min-height: 100vh !important;
+
   --bg-color: #edeef0;
   --header-bg-color: #fff;
   --nav-input-color: #dde1e6;
@@ -12,7 +14,46 @@
   --anchor-color: #404040;
   --lang-color: #dadada;
   --inverting-icon-color: invert(0);
+
+  
+  //  background-color: var(--bg-color);
+
+
 }
+// Старый вариант стилей
+// [data-theme="dark"] {
+//   --bg-color: #0f172a;
+//   --header-bg-color: #0f172a;
+//   --nav-input-color: #1e293b;
+//   --bg-card-color: #1a263a;
+//   --card-border-color: #94a3b8;
+//   --text-color: #e2e8f0;
+//   --anchor-color: #94a3b8;
+//   --lang-color: #29385e;
+//   --inverting-icon-color: invert(1);
+// }
+
+[data-theme="dark"] {
+  --bg-color: #121212; /* Фон страницы (черный/серый оттенок) */
+  --header-bg-color: #181818; /* Фон для шапки (чуть светлее) */
+  --nav-input-color: #282828; /* Фон для элементов навигации (тёмно-серый) */
+  --bg-card-color: #1c1c1c; /* Фон для карточек (очень тёмный оттенок) */
+  --card-border-color: #535353; /* Цвет границы для карточек (средний серый) */
+  --text-color: #ffffff; /* Белый цвет текста */
+  --anchor-color: #686868;
+  --lang-color: #404040; /* Цвет для языка (нейтральный серый) */
+  --inverting-icon-color: invert(1); /* Цвет инвертированных иконок */
+
+ 
+
+}
+
+[data-theme="dark"] {
+  /* Полоса прокрутки в целом */
+  scrollbar-color: #686868 #424242;
+}
+
+// Сделано всё на данный момент так, что dark добавляется к layout, что неверно. Переделать под добавку атрибута (выше) к html!
 
 * {
   box-sizing: border-box;
@@ -24,20 +65,25 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: rgb(23 23 23);
+  // background-color: rgb(23 23 23);
+
   overflow-x: hidden;
   overflow-y: auto;
-  &.dark {
-    background-color: #edeef0;
-  }
+
+  // background-color: var(--bg-color);
 }
 
 body {
   color: var(--text-color);
-  min-height: 100vh;
+  min-height: 100vh !important;
   font-family: Helvetica, sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);
+}
+
+.shortgray {
+  color: var(--anchor-color);
+  /* transition: color .5s ease; */
 }

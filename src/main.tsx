@@ -5,11 +5,14 @@ import "./index.scss";
 
 import "./18n.ts";
 import { ModalProvider } from "./context/ModalContext.tsx";
+import { ThemeProvider } from "./providers/ThemeProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ModalProvider>
-      <App />
-    </ModalProvider>
+    <ThemeProvider>
+      <ModalProvider>
+        <App />
+      </ModalProvider>
+    </ThemeProvider>
   </StrictMode>
 );

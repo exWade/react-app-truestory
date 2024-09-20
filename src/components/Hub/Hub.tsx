@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Hub.scss";
 import { ModalContext } from "../../context/ModalContext";
 
@@ -35,7 +35,7 @@ const Hub = () => {
         document.documentElement.clientHeight; // минусуя уже отображенную пользователю часть страницы
       const progressPercents = (windowScroll / windowHeight) * 360;
       if (progressBar) {
-        progressBar!.style.background = `conic-gradient(rgb(111, 111, 111) ${progressPercents}deg,  var(--anchor-color) 0deg`;
+        progressBar!.style.background = `conic-gradient(rgb(116, 116, 116) ${progressPercents}deg,  var(--anchor-color) 0deg`;
       }
     }
 

@@ -12,7 +12,7 @@ header {
 
   .header-container {
     height: inherit;
-    width : calc(1622px*0.9*0.9);
+    width: calc(1622px * 0.9 * 0.9);
     margin: auto;
     display: flex;
     position: relative;
@@ -190,7 +190,7 @@ header {
             user-select: none;
             height: 26px;
             border-style: none;
-            background-color: var(--bg-color);
+            background-color: var(--nav-input-color);
             color: var(--text-color);
             font-size: 16px;
             padding: 0px 30px 0 8px;
@@ -242,21 +242,24 @@ header {
         height: 100%;
         height: inherit;
         cursor: pointer;
-        background-image: url("https://cdn-icons-png.flaticon.com/64/606/606795.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
         transition: transform 0.3s ease;
+        background-image: url("https://cdn-icons-png.flaticon.com/64/3053/3053617.png");
+        filter: invert(0);
+      }
+
+      .switch-mode.drk {
+        background-image: url("https://cdn-icons-png.flaticon.com/64/606/606795.png");
+        filter: invert(1);
       }
 
       .switch-mode:hover {
         transform: scale(1.15);
       }
 
-      .switch-mode.drk {
-        background-image: url("https://cdn-icons-png.flaticon.com/64/3053/3053617.png");
-        filter: invert(1);
-      }
+     
 
       .header-info__mini {
         user-select: none;

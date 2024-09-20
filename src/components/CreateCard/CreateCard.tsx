@@ -129,7 +129,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         <button
           type="submit"
           value="create"
-          className="lng-creatingBtn font-bold mt-4 py-2 px-3 rounded-lg bg-emerald-500 w-[45%] self-center text-gray-100 hover:w-[100%] transition-all delay-200 duration-300 ease-out text-black"
+          className="lng-creatingBtn font-bold mt-4 py-2 px-3 rounded-lg bg-emerald-500 w-[45%] self-center text-gray-100 hover:w-[100%] transition-all delay-200 duration-300 ease-out"
         >
           {t("creatingBtn")}
         </button>
