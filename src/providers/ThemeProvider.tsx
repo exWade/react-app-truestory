@@ -30,16 +30,8 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
 
       
     }
+  
 
-    // if (theme === 'light') {
-    //   btn?.classList.remove("drk");
-    // } 
-    // else {
-    //   btn?.classList.add("drk");
-    // }
-
-
-    
   }, []);
 
   if (document.documentElement.getAttribute('data-theme') == 'dark') {

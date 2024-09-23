@@ -1,33 +1,11 @@
 .workspace {
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-  // align-items: center;
-  // justify-content: baseline;
-
-  // display: grid;
-  // grid-column: 4;
-  width: 100%;
-  max-width: calc(1622px * 0.9 * 0.9); /* 76vw */
-  margin-top: 24px;
-  // margin-left: auto;
-  // margin-right: auto;
-  transition: all;
-
   .photo-card {
-    // margin-right: calc(40px * 0.9 * 0.9);
-    // margin-bottom: calc(40px * 0.9 * 0.9);
-
-    &:nth-of-type(4n) {
-      margin-right: 0px;
-    }
-
     &:hover {
       -webkit-transform: scale(1.05);
       -moz-transform: scale(1.05);
       -o-transform: scale(1.05);
       transform: scale(1.05);
-
+      
       -webkit-transition: transform 0.15s linear;
       -moz-transition: transform 0.15s linear;
       -o-transition: transform 0.15s linear;
@@ -35,3 +13,52 @@
     }
   }
 }
+
+
+.workspace
+{
+  row-gap: 3rem;
+}
+
+
+// 2xl
+@media screen and (max-width: 1536px) {
+  .workspace {
+    row-gap: 1rem;
+  }
+}
+// // xl
+@media screen and (max-width: 1320px) {
+  .workspace {
+    row-gap: 1rem;
+  }
+}
+// buffer
+@media screen and (max-width: 1280px) {
+  .workspace {
+    row-gap: 3rem;
+  }
+}
+// // lg
+@media screen and (max-width: 1024px) {
+  .workspace {
+    row-gap: 4rem;
+    column-gap: 1rem;
+  }
+}
+
+// // md
+@media screen and (max-width: 768px) {
+  .workspace {
+    row-gap: 1.5rem;
+    
+  }
+}
+// // sm
+@media screen and (max-width: 640px) {
+  .workspace {
+    row-gap: 0rem;
+    
+  }
+}
+// }

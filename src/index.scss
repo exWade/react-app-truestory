@@ -44,8 +44,6 @@
   --lang-color: #404040; /* Цвет для языка (нейтральный серый) */
   --inverting-icon-color: invert(1); /* Цвет инвертированных иконок */
 
- 
-
 }
 
 [data-theme="dark"] {
@@ -86,4 +84,10 @@ body {
 .shortgray {
   color: var(--anchor-color);
   /* transition: color .5s ease; */
+}
+
+
+.container {
+  padding-left: 8px;
+  padding-right: 8px;
 }

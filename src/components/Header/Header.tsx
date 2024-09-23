@@ -45,28 +45,16 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
   useEffect(() => {
     const switchLang = document.querySelector(".switch-lang");
 
-   
-
     const initializeLanguage = (language: string) => {
       for (let i = 0; i < i18n.languages.length; i++) {
         switchLang?.classList.remove(i18n.languages[i]);
       }
-
+      document.documentElement.lang = language;
       switchLang?.classList.add(language);
       // console.log("Initialize Lang");
     };
 
-    // const changeLanguage = (language: string) => {
-    //   if (language !== i18n.language) {
-    //     switchLang?.classList.add(language);
-    //     i18n.changeLanguage(language);
-    //     console.log(i18n.languages);
-    //   }
-    //   else {
-    //     console.log("change lang equals");
-    //   }
-    // };
-
+  
     initializeLanguage(i18n.resolvedLanguage || "en");
     console.log(i18n.resolvedLanguage, "resolvedLang");
     return () => {};
@@ -77,13 +65,14 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       switchLang?.classList.remove(i18n.language);
       switchLang?.classList.add(language);
       i18n.changeLanguage(language);
+      document.documentElement.lang = language;
     }
   };
  
   return (
     <header>
-      <div className="header-container container">
-        <div className="header-logo-container px-2">
+      <div className="header-container container m-auto">
+        <div className="header-logo-container pr-2">
           <a className="header-logo" href="." id="truestory-logo">
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
@@ -122,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           </div>
         </div>
 
-        <div className="header-righside pr-2">
+        <div className="header-righside">
           <div className="form-search-container w-[150px] xl:w-[200px] lg:w-[200px] md:w-[200px] sm:w-[150px]">
             <div className="search">
               <input

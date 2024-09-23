@@ -29,8 +29,20 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
       counting(e);
     };
 
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        close();
+        closeCreate();
+      }
+    };
+    // не уверен что это правильно
+    document.addEventListener("keydown", handleEscape);
     handleCountQuery(searchedCards.length);
-  }, [getSearchedCards]);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [getSearchedCards, close, closeCreate]);
 
   const createHandler = (card: ICard) => {
     setPhotocards((prev) => [card, ...prev]);
@@ -57,14 +69,14 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
   const searchedCards = useMemo(getSearchedCards, [searched, photocards]);
 
   return (
-    <div className="">
-      <section
-        className="workspace mx-auto justify-items-center grid xl:grid-cols-4 xl:gap-8 lg:grid-cols-3 lg:gap-6 md:grid-cols-2 md:gap-4 sm:grid-cols-1 sm:gap-4"
+    <main className="container mx-auto">
+      <div
+        className="workspace transition-all justify-items-center  grid 2xl:grid-cols-4 2xl:gap-16 xl:grid-cols-4 xl:gap-6 lg:grid-cols-3 lg:gap-16 md:grid-cols-2 md:gap-36 sm:grid-cols-1 sm:gap-4"
         id="wrkspc"
       >
         {searchedCards.map((card) => (
           <div
-            className="photo-card mb-4 xl:mb-0 lg:mb-0 md:mb-0 sm:mb-0"
+            className="photo-card"
             key={card.id}
           >
             <Card
@@ -74,7 +86,7 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
             />
           </div>
         ))}
-      </section>
+      </div>
 
       {modal && <Modal card={modalState} onClose={close} />}
 
@@ -86,7 +98,7 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
 
       {/* <Messages />  */}
       <Loader />
-    </div>
+    </main>
   );
 }
 

@@ -16,13 +16,13 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <div className="mt-24">
-      <section className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
+    <>
+      <div className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
         <div
           className="background__image"
           style={{ backgroundImage: `url(${profile.backgroundImage})` }}
         />
-      </section>
+      </div>
 
       <section className="profile" id="profile-js">
         <div className="profile__main h-[240px]">
@@ -42,14 +42,14 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
               </h3>
             </div>
             <div className="social__group">
-              <a href="tel:89967694547" className="social-box">
+              <a href="tel:88888888888" className="social-box">
                 <div className="social social__phone"></div>
               </a>
               <a href="mailto:exwadecoop@gmail.com" className="social-box">
                 <div className="social social__mail"></div>
               </a>
               <a
-                href="https://vk.com/vileontev"
+                href="https://github.com/exWade"
                 className="social-box"
                 target="_blank"
                 rel="noreferrer"
@@ -94,7 +94,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

@@ -1,21 +1,23 @@
 .photo-card {
   display: flex;
   justify-content: center;
-  width: calc(375px * 0.9 * 0.9);
-  // height            : calc(456px*0.9*0.9);
-  height: calc(475px * 0.9 * 0.9);
+
+  width: 337.5px; // *0.9
+  height: 427.5px; // *0.9
+  font-size: 19.44px; // *0.9
+  padding-left: 30.375px; // *0.9
+  padding-top: 24px;
+  padding-right: 30.375px; // *0.9
+
+  will-change: transform;
   border-radius: 16px;
   background-color: var(--bg-card-color);
   color: var(--text-color);
+  // height            : calc(456px*0.9*0.9);
 
   // border: 1px solid #d0d3d8;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: calc(24px * 0.9 * 0.9);
-  will-change: transform;
-  padding-left: 33.75px * 0.9 * 0.9;
-  padding-top: 24px;
-  padding-right: 33.75px * 0.9 * 0.9;
-
+  // При изменении размера экрана умножить 0.9 на ширину высоту и тд (смотриться криво)
   -webkit-transition: transform 0.2s linear, box-shadow 0.25s linear;
   -moz-transition: transform 0.2s linear, box-shadow 0.25s linear;
   -o-transition: transform 0.2s linear, box-shadow 0.25s linear;
@@ -23,6 +25,7 @@
   /* , background-color 0.55s ease */
   -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
   backface-visibility: hidden;
+  will-change: transform;
   cursor: default;
 
   &:hover {
@@ -47,7 +50,7 @@
     //  transform: translate(0);
 
     .card-img-container {
-      height: 270px * 0.9;
+      height: 270px; // *0.9
       border-radius: 8px;
 
       will-change: transform;
@@ -76,7 +79,7 @@
       &:hover .card-image {
         transform: scale(1.05);
         transition: transform 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-        will-change: transform;
+        // will-change: transform;
       }
     }
 
@@ -99,14 +102,17 @@
       bottom: 16px;
       right: 0px;
       font-weight: bold;
+      will-change: unset !important;
+      backface-visibility: hidden;
+      transform: translateZ(0); /* Добавляем аппаратное ускорение */
 
       .addition-wrapper {
         position: relative;
         font-weight: normal;
         max-width: 100%;
-        will-change: unset !important;
+        will-change: unset !important; /* Убираем will-change */
+        backface-visibility: hidden;
         transition: width 0.3s;
-
         /* , color .5s ease */
       }
 
@@ -138,3 +144,51 @@
 /* UPD:  ЧТОБЫ УБРАТЬ ТРЯСКУ ФОТО В КОНТЕЙНЕРЕ НУЖНО ОБНУЛИТЬ 
             translate3d(0, 0, 0) у контейнера
   */
+
+// 2xl
+@media screen and (max-width: 1536px) {
+  .photo-card {
+    width: 303.75px; // *0.9
+    height: 384.75px; // *0.9
+    font-size: 19.44px; // *0.9
+    padding-left: 27.3375px; // *0.9
+    padding-right: 27.3375px; // *0.9
+    padding-top: 24px;
+  }
+  .card-img-container {
+    height: 243px !important; // *0.9
+  }
+}
+// // xl
+// @media screen and (max-width: 1320px) {
+// }
+// // lg
+// @media screen and (max-width: 1024px) {
+//   .photo-card {
+//     width: 303.75px; // *0.9
+//     height: 384.75px; // *0.9
+//     font-size: 19.44px; // *0.9
+//     padding-left: 27.3375px; // *0.9
+//     padding-right: 27.3375px; // *0.9
+//     padding-top: 24px;
+//   }
+// }
+
+// // md
+// @media screen and (max-width: 768px) {
+//   .photo-card {
+//     width: 303.75px; // *0.9
+//     height: 384.75px; // *0.9
+//     font-size: 19.44px; // *0.9
+//     padding-left: 27.3375px; // *0.9
+//     padding-right: 27.3375px; // *0.9
+//     padding-top: 24px;
+//   }
+// }
+// // sm
+@media screen and (max-width: 640px) {
+  .photo-card {
+    margin-bottom: 24px;
+  }
+}
+// }

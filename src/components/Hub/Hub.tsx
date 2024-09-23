@@ -35,7 +35,7 @@ const Hub = () => {
         document.documentElement.clientHeight; // минусуя уже отображенную пользователю часть страницы
       const progressPercents = (windowScroll / windowHeight) * 360;
       if (progressBar) {
-        progressBar!.style.background = `conic-gradient(rgb(116, 116, 116) ${progressPercents}deg,  var(--anchor-color) 0deg`;
+        progressBar!.style.background = `conic-gradient(rgb(141, 141, 141) ${progressPercents}deg,  var(--anchor-color) 0deg`;
       }
     }
 

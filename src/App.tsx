@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-24">
       <Header searching={handleSearchQuery} i18n={i18n} t={t} />
       <BrowserRouter>
         <Routes>
