@@ -205,7 +205,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      margin-left: 16px;
+      // margin-left: 16px;
 
       .counters__group-items {
         display: flex;
@@ -254,5 +254,129 @@
     margin-left: 0px; //4px
     margin-top: 12px; //16px
     user-select: none;
+  }
+}
+
+
+// 2xl
+@media screen and (max-width: 1536px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 32px;
+          
+          // transition: color .5s ease;
+        }}}}
+}
+// // xl
+@media screen and (max-width: 1320px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 32px;
+          
+          // transition: color .5s ease;
+        }}}}
+}
+// buffer
+@media screen and (max-width: 1280px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 32px;
+          
+          // transition: color .5s ease;
+        }}}}
+}
+// // lg
+@media screen and (max-width: 1024px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 32px;
+          
+          // transition: color .5s ease;
+        }}}}
+}
+
+// // md
+@media screen and (max-width: 768px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 32px;
+          
+          // transition: color .5s ease;
+        }}}}
+
+      .verified {
+        width: 16px !important;
+        height: 16px !important;
+      }
+}
+// // sm
+@media screen and (max-width: 640px) {
+  .profile__main-full {
+    .names__group {
+      .nickname__group {
+        
+
+        .nickname {
+          
+          font-size: 24px !important;
+          margin-right: 2px !important;
+          // transition: color .5s ease;
+        }}}}
+
+        .profile__avatar {
+          margin-right: 8px !important;
+        }
+}
+
+@media screen and (max-width: 375px) {
+
+  .profile__avatar {
+    height: 100px !important;
+    width: 100px !important;
+  }
+  
+  .profile__avatar{
+    top: -50px !important;
+  }
+
+  .profile__status {
+    width: 32px !important;
+    height: 32px !important;
+    
+    span {
+      font-size: 1rem !important;
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 350px) {
+  .nickname {
+    letter-spacing: 0.02em !important;
   }
 }

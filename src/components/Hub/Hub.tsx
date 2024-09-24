@@ -63,7 +63,7 @@ const Hub = () => {
     <>
       {console.log("return")}
       <div
-        className="progress fixed bottom-[85px] right-6"
+        className="progress fixed bottom-[72px] right-2"
         id="progBar"
         style={{ background: "conic-gradient(rgb(153, 67, 67)" }}
       >
@@ -79,7 +79,7 @@ const Hub = () => {
       </div>
 
       <button
-        className=" add-Btn fixed bottom-4 right-6 rounded-full text-white text-2xl select-none"
+        className=" add-Btn fixed bottom-2 right-2 rounded-full text-white text-2xl select-none"
         onClick={openCreate}
       >
         +

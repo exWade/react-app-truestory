@@ -302,3 +302,28 @@ header {
     }
   }
 }
+
+
+@media screen and (max-width: 425px) {
+  
+  .nickname-mini {
+    display: none !important;
+  }
+ 
+}
+
+@media screen and (max-width: 350px) {
+  
+  .header-logo__camera {
+    display: none !important;
+  }
+
+  .switch-lang {
+    margin-left: 0px !important;
+  }
+
+  .avatar-mini {
+    margin-right: 0px !important;
+  }
+ 
+}

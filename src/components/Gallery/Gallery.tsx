@@ -69,9 +69,9 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
   const searchedCards = useMemo(getSearchedCards, [searched, photocards]);
 
   return (
-    <main className="container mx-auto">
+    <main className="mx-auto">
       <div
-        className="workspace transition-all justify-items-center  grid 2xl:grid-cols-4 2xl:gap-16 xl:grid-cols-4 xl:gap-6 lg:grid-cols-3 lg:gap-16 md:grid-cols-2 md:gap-36 sm:grid-cols-1 sm:gap-4"
+        className="workspace transition-all justify-items-center  grid 2xl:grid-cols-4 2xl:gap-14 xl:grid-cols-4 xl:gap-4 lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-36 sm:grid-cols-1 sm:gap-4"
         id="wrkspc"
       >
         {searchedCards.map((card) => (
