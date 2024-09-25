@@ -11,7 +11,7 @@
   & .background__image {
     position: absolute;
     inset: 0;
-    min-height: 100vh;
+    min-height: 100%;
     background-size:auto;
     background-repeat: no-repeat;
     background-position: center -55vh;
@@ -232,16 +232,6 @@
           }
         }
       }
-
-      // .line {
-      //   width: 360px;
-      //   height: 2px;
-      //   border-radius: 8px;
-      //   margin-top: 16px;
-      //   opacity: .8;
-      //   background-color: var(--card-border-color);
-      //   // transition: background-color .5s ease;
-      // }
     }
   }
 

@@ -1,10 +1,12 @@
 // import "./resolutions.scss";
 import Header from "./components/Header/Header.tsx";
-import ProfilePage from "./pages/ProfilePage.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { useTranslation } from "react-i18next";
-import BrowsePage from "./pages/BrowsePage.tsx";
+import { Loader } from "./components/Loader/Loader.tsx";
+
+const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const BrowsePage = lazy(() => import("./pages/BrowsePage"));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -19,8 +21,22 @@ function App() {
       <Header searching={handleSearchQuery} i18n={i18n} t={t} />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ProfilePage searched={searched} t={t} />} />
-          <Route path="browse" element={<BrowsePage/>}/>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<Loader />}>
+                <ProfilePage searched={searched} t={t} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="browse"
+            element={
+              <Suspense fallback={<Loader />}>
+                <BrowsePage />
+              </Suspense>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
