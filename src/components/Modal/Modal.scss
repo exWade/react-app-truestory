@@ -38,7 +38,7 @@
           position: relative;
           margin: auto;
           width: 80vw;
-          height: 90.1vh;
+          height: 80vh;
           border-radius: 16px;
           color: var(--text-color);
           background-color: var( --bg-card-color);
@@ -59,14 +59,14 @@
               display: flex;
               flex-direction: row;
               width: 100%;
-              height: 90.1vh;
+              height: 100%;
               overflow: hidden;
               transition: all;
   
               .modal-left-side {
                   display: block;
                   width: 65.05%;
-                  height: 90.1vh;
+                  height: 100%;
                   border-radius: 16px 0px 0px 16px;
                   
                   background-position: center center;
@@ -92,7 +92,7 @@
                       backdrop-filter: blur(30px);
   
                       .modal-content-image {
-                          height: 90.1vh;
+                          height: 100%;
                           width: 100.05%;
                           object-fit: contain;
                           overflow: hidden;
@@ -188,7 +188,7 @@
   
   }
   
-  @media screen and (max-width:calc(1230px*0.9*0.9)) {
+  @media screen and (max-width: 1280px) {
    
     .whiteboard-container {
       flex-direction: column !important;

@@ -42,7 +42,7 @@ export const cards: ICard[] = [
     "order": 5,
     "title": 'Starboy',
     "image": 'https://t2.genius.com/unsafe/883x0/https%3A%2F%2Fimages.genius.com%2F7aa3bebecdfc0a7f9140c479bcb52182.1000x1000x1.png',
-    "description": 'Starboy is The Weeknd’s highly anticipated third studio album (excluding the mixtape compilation album Trilogy). The “king of the fall” announced the album after teasing his fans on his instagram.',
+    "description": 'Starboy is The Weeknd’s highly anticipated third studio album (excluding the mixtape compilation album Trilogy). The “king of the fall” announced the album after teasing his fans on his instagram. ',
     "city": 'Los Angeles',
     "year": 2016
   },

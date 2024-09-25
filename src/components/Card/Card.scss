@@ -52,7 +52,7 @@
     .card-img-container {
       height: 270px; // *0.9
       border-radius: 8px;
-
+      min-width: 270px;
       will-change: transform;
       cursor: pointer;
       overflow: hidden;
@@ -67,6 +67,7 @@
         pointer-events: none;
         -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
         backface-visibility: hidden;
+        background-repeat: no-repeat;
         will-change: transform;
         /* transform: translate(0); */
         transition: transform 0.15s linear;

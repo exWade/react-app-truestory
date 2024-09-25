@@ -4,6 +4,7 @@ import ProfilePage from "./pages/ProfilePage.tsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import BrowsePage from "./pages/BrowsePage.tsx";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProfilePage searched={searched} t={t} />} />
+          <Route path="browse" element={<BrowsePage/>}/>
         </Routes>
       </BrowserRouter>
     </div>
