@@ -9,11 +9,11 @@ import { ModalProvider } from "./context/ModalContext.tsx";
 import { ThemeProvider } from "./providers/ThemeProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+   <StrictMode>
     <ThemeProvider>
       <ModalProvider>
         <App />
       </ModalProvider>
     </ThemeProvider>
-  </StrictMode>
+   </StrictMode>
 );

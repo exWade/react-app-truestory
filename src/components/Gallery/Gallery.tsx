@@ -3,7 +3,6 @@ import "./Gallery.scss";
 import { Card } from "../Card/Card";
 import { cards } from "../../data/cards";
 import { ICard } from "../../types/models";
-import { Loader } from "../Loader/Loader";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import { Modal } from "../Modal/Modal";
@@ -42,7 +41,7 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [getSearchedCards, close, closeCreate]);
+  }, [getSearchedCards, close, closeCreate, counting]);
 
   const createHandler = (card: ICard) => {
     setPhotocards((prev) => [card, ...prev]);
@@ -97,7 +96,6 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
       )}
 
       {/* <Messages />  */}
-      <Loader />
     </main>
   );
 }

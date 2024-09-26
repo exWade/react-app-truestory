@@ -33,7 +33,7 @@ function App() {
             path="browse"
             element={
               <Suspense fallback={<Loader />}>
-                <BrowsePage />
+                <BrowsePage searched={searched} t={t}  />
               </Suspense>
             }
           />

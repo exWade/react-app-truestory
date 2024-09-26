@@ -17,9 +17,9 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
     order: 1,
     title: "",
     description: "",
-    city: "",
+    place: "",
     year: today.getFullYear(), // сделать через библиотеку Date
-    image: "",
+    url: "",
   });
 
   const submitHandler = (event: React.FormEvent) => {
@@ -72,10 +72,10 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         </h2>
         <input
           type="url"
-          name="image"
+          name="url"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
-          value={data.image}
+          value={data.url}
           onChange={changeHandler}
           required
         />
@@ -104,7 +104,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           name="city"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
-          value={data.city}
+          value={data.place}
           onChange={changeHandler}
           minLength={2}
           maxLength={16}

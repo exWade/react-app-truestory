@@ -51,6 +51,7 @@
   scrollbar-color: #686868 #424242;
 }
 
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -75,7 +76,7 @@ body {
   font-family: Helvetica, sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
-  // scrollbar-gutter: stable;
+  // scrollbar-gutter: stable; // фиксануть хедер
   background-color: var(--bg-color);
 }
 

@@ -2,9 +2,9 @@ export interface ICard {
     id?: number;
     order: number;
     title: string;
-    image: string;
+    url: string;
     description: string;
-    city: string;
+    place: string;
     year: number;
   }
   

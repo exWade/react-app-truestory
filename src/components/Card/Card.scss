@@ -92,6 +92,7 @@
       font-weight: 600;
       line-height: 1.25em;
       will-change: transform;
+      user-select: none;
       /* transition: color .5s ease; */
     }
 
@@ -106,7 +107,7 @@
       will-change: unset !important;
       backface-visibility: hidden;
       transform: translateZ(0); /* Добавляем аппаратное ускорение */
-
+      user-select: none;
       .addition-wrapper {
         position: relative;
         font-weight: normal;
