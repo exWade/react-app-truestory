@@ -52,7 +52,7 @@
     .card-img-container {
       height: 270px; // *0.9
       border-radius: 8px;
-      min-width: 270px;
+      width: 270px;
       will-change: transform;
       cursor: pointer;
       overflow: hidden;
@@ -157,13 +157,14 @@
   .photo-card {
     width: 303.75px; // *0.9
     height: 384.75px; // *0.9
-    font-size: 19.44px; // *0.9
+    font-size: calc(19.44px * 0.9); // *0.9
     padding-left: 27.3375px; // *0.9
     padding-right: 27.3375px; // *0.9
     padding-top: 24px;
   }
   .card-img-container {
-    height: 243px !important; // *0.9
+    width: calc(270px * 0.9) !important; // *0.9
+    height: calc(270px * 0.9) !important; // *0.9
   }
 }
 

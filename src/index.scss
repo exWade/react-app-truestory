@@ -68,7 +68,7 @@ body {
   font-family: Helvetica, sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
-  // scrollbar-gutter: stable; // фиксануть хедер
+  scrollbar-gutter: stable;
   background-color: var(--bg-color);
 }
 
@@ -133,4 +133,12 @@ body {
   100% {
     left: 100%;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  
+  body {
+    scrollbar-gutter: auto !important;
+  }
+ 
 }

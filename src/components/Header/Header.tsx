@@ -5,6 +5,7 @@ import { profile } from "../../data/profile";
 import { i18n, TFunction } from "i18next";
 import { useTheme } from "../../providers/ThemeProvider";
 // import useTheme from "../../hooks/useTheme";
+import avatarMini from '../../assets/avatar_mini.jpg';
 
 interface HeaderProps {
   searching: (query: string) => void;
@@ -127,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           <div className="switch-mode" id="switch-mode" onClick={toggleTheme}></div>
 
           <div className="header-info__mini">
-            <div className="avatar-mini"></div>
+            <div className="avatar-mini" style={{ backgroundImage: `url(${avatarMini})` }}></div>
             <div className="nickname-mini">{profile.nickname}</div>
           </div>
         </div>
