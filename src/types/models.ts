@@ -3,6 +3,7 @@ export interface ICard {
     order: number;
     title: string;
     url: string;
+    thumbnailUrl: string;
     description: string;
     place: string;
     year: number;

@@ -62,7 +62,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        background-color: rgb(179, 178, 178);
+        background-color: var(--nav-input-color);
         user-select: none;
         pointer-events: none;
         -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
@@ -94,6 +94,11 @@
       will-change: transform;
       user-select: none;
       /* transition: color .5s ease; */
+    }
+
+    .image-caption.skeleton {
+      margin-top: 16px;
+      min-height: 1.4em;
     }
 
     .addition {

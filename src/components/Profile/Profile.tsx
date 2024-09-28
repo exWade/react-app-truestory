@@ -90,7 +90,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
                 <h3 className="shortgray">{t("countersFollowing")}</h3>
               </div>
             </div>
-            <div className="line"></div>
+            
           </div>
         </div>
       </section>

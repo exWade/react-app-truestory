@@ -12,7 +12,7 @@ interface ProfilePageProps {
 
 const ProfilePage: React.FC<ProfilePageProps> = ({ searched, t }) => {
   const [counted, setCount] = useState<number>(0);
-
+  
   const handleCountQuery = (counted: number) => {
     setCount(counted);
   };

@@ -8,6 +8,7 @@ import { Modal } from "../components/Modal/Modal";
 import Hub from "../components/Hub/Hub";
 import { Loader } from "../components/Loader/Loader";
 import { TFunction } from "i18next";
+import SkeletonGallery from "../skeletons/SkeletonGallery";
 
 interface BrowsePageProps {
   searched: string;
@@ -46,6 +47,8 @@ const BrowsePage: React.FC<BrowsePageProps> = ({ searched, t }) => {
           const total = response.headers["x-total-count"];
           if (total) {
             setTotalCount(Number(total));
+          } else {
+            setTotalCount(5000);
           }
         })
         .finally(() => setFetching(false));
@@ -54,7 +57,6 @@ const BrowsePage: React.FC<BrowsePageProps> = ({ searched, t }) => {
 
   // Используем IntersectionObserver для реализации пагинации
   useEffect(() => {
-
     if (searched) return; // Отключаем наблюдение, если идёт поиск
 
     const options = {
@@ -102,16 +104,24 @@ const BrowsePage: React.FC<BrowsePageProps> = ({ searched, t }) => {
 
   return (
     <main className="container mx-auto worldwide">
-      <div
+      {fetching && photos.length === 0 && !searched ? (
+        <SkeletonGallery/>
+      ) : (
+        <>
+        <div
         className="workspace transition-all justify-items-center grid 2xl:grid-cols-4 2xl:gap-14 xl:grid-cols-4 xl:gap-4 lg:grid-cols-3 lg:gap-12 md:grid-cols-2 md:gap-36 sm:grid-cols-1 sm:gap-4"
         id="wrkspc"
       >
         {searchedPhotos.map((photo, index) => (
           <div className="photo-card" key={`${photo.id}-${index}`}>
-            <Card card={photo} key={photo.id} onModal={handleModalOpening} />
+            <Card card={photo} onModal={handleModalOpening} />
           </div>
         ))}
       </div>
+        </>
+      )
+    }
+      
 
       {/* Триггер для IntersectionObserver */}
       {!searched && (
@@ -123,8 +133,8 @@ const BrowsePage: React.FC<BrowsePageProps> = ({ searched, t }) => {
         </div>
       )}
 
-      {modal && <Modal card={modalState} onClose={close} />}
       <Hub />
+      {modal && <Modal card={modalState} onClose={close} />}
     </main>
   );
 };

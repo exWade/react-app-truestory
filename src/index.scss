@@ -15,10 +15,7 @@
   --lang-color: #dadada;
   --inverting-icon-color: invert(0);
 
-  
   //  background-color: var(--bg-color);
-
-
 }
 // Старый вариант стилей
 // [data-theme="dark"] {
@@ -43,14 +40,9 @@
   --anchor-color: #686868;
   --lang-color: #404040; /* Цвет для языка (нейтральный серый) */
   --inverting-icon-color: invert(1); /* Цвет инвертированных иконок */
-
-}
-
-[data-theme="dark"] {
   /* Полоса прокрутки в целом */
   scrollbar-color: #686868 #424242;
 }
-
 
 * {
   box-sizing: border-box;
@@ -85,9 +77,60 @@ body {
   /* transition: color .5s ease; */
 }
 
-
 .container {
   padding-left: 8px;
   padding-right: 8px;
 }
 
+
+.skeleton {
+  background-color: #e2e8f0; /* Серый цвет скелетного элемента */
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.250), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+[data-theme="dark"] .skeleton {
+  background-color: var(--nav-input-color); /* Используем темно-серый цвет из вашей палитры */
+}
+
+
+/* Опционально: Изменение анимации для более плавного эффекта */
+[data-theme="dark"] .skeleton::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.01), transparent);
+  animation: pulse-dark 1.5s infinite;
+}
+
+@keyframes pulse-dark {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

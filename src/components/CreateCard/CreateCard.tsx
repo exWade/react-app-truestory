@@ -18,8 +18,9 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
     title: "",
     description: "",
     place: "",
-    year: today.getFullYear(), // сделать через библиотеку Date
+    year: today.getFullYear(),
     url: "",
+    thumbnailUrl: ""
   });
 
   const submitHandler = (event: React.FormEvent) => {
@@ -101,7 +102,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         </h2>
         <input
           type="text"
-          name="city"
+          name="place"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.place}
