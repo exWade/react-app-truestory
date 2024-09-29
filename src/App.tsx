@@ -21,26 +21,25 @@ function App() {
   return (
     <div className="min-h-screen pt-24">
       <Header searching={handleSearchQuery} i18n={i18n} t={t} />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<SkeletonProfilePage />}>
-                <ProfilePage searched={searched} t={t} />
-              </Suspense>
-            }
-          />
-          <Route
-            path="browse"
-            element={
-              <Suspense fallback={<Loader/>}>
-                <BrowsePage searched={searched} t={t} />
-              </Suspense>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<SkeletonProfilePage />}>
+              <ProfilePage searched={searched} t={t} />
+            </Suspense>
+          }
+        />
+        <Route
+          path="browse"
+          element={
+            <Suspense fallback={<Loader />}>
+              <BrowsePage searched={searched} t={t} />
+            </Suspense>
+          }
+        />
+      </Routes>
     </div>
   );
 }

@@ -7,13 +7,16 @@ import "./normalize.css";
 import "./18n.ts";
 import { ModalProvider } from "./context/ModalContext.tsx";
 import { ThemeProvider } from "./providers/ThemeProvider.tsx";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
-   <StrictMode>
+  <StrictMode>
     <ThemeProvider>
-      <ModalProvider>
-        <App />
-      </ModalProvider>
+      <BrowserRouter>
+        <ModalProvider>
+          <App />
+        </ModalProvider>
+      </BrowserRouter>
     </ThemeProvider>
-   </StrictMode>
+  </StrictMode>
 );

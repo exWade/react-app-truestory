@@ -6,6 +6,7 @@ import { i18n, TFunction } from "i18next";
 import { useTheme } from "../../providers/ThemeProvider";
 // import useTheme from "../../hooks/useTheme";
 import avatarMini from '../../assets/avatar_mini.jpg';
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   searching: (query: string) => void;
@@ -14,6 +15,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
+
+  const navigate = useNavigate();
 
   const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
     searching(e.target.value);
@@ -74,15 +77,15 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
     <header>
       <div className="header-container container m-auto">
         <div className="header-logo-container pr-2">
-          <a className="header-logo" href="." id="truestory-logo">
+          <button className="header-logo" onClick={() => {navigate('browse')}} id="truestory-logo">
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
             ></img>{" "}
-            <span className="hidden xl:inline lg:inline md:inline sm:hidden">
+            <span className="hidden xl:inline lg:inline md:inline sm:hidden align-bottom h-[26px]">
               Truestory
             </span>{" "}
-          </a>
+          </button>
           <div className="switch-lang" id="switchLang">
             <div className="langs__layout">
               <ul className="langs">
@@ -127,10 +130,12 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           </div>
           <div className="switch-mode" id="switch-mode" onClick={toggleTheme}></div>
 
-          <div className="header-info__mini">
+          <div>
+          <button className="header-info__mini" onClick={() => {navigate('/')}}>
             <div className="avatar-mini" style={{ backgroundImage: `url(${avatarMini})` }}></div>
             <div className="nickname-mini">{profile.nickname}</div>
-          </div>
+          </button>
+            </div>
         </div>
       </div>
     </header>
