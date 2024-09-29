@@ -3,9 +3,8 @@ import "../../index.scss";
 import "./Header.scss";
 import { profile } from "../../data/profile";
 import { i18n, TFunction } from "i18next";
-import { useTheme } from "../../providers/ThemeProvider";
-// import useTheme from "../../hooks/useTheme";
-import avatarMini from '../../assets/avatar_mini.jpg';
+import useTheme  from "../../hooks/useTheme";
+import avatarMini from "../../assets/avatar_mini.jpg";
 import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
@@ -15,7 +14,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
-
   const navigate = useNavigate();
 
   const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,27 +22,6 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
 
   // Temnaya temka
   const { theme, toggleTheme } = useTheme();
-
-
-  // const btn = document.querySelector(".switch-mode");
-  // const currentTheme = localStorage.getItem("theme");
-
-  // if (currentTheme === "dark") {
-  //   setIsDark(true);
-  //   btn?.classList.add("drk");
-  //   document.querySelector(".layout")?.classList.add("dark");
-  // }
-  // let theme = "light";
-
-  // btn?.addEventListener("click", function () {
-  //   if (theme === 'light') {
-  //     btn?.classList.add("drk");
-  //   } 
-  //   else {
-  //     btn?.classList.remove("drk");
-  //   }
-
-  // })
 
   useEffect(() => {
     const switchLang = document.querySelector(".switch-lang");
@@ -58,7 +35,6 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       // console.log("Initialize Lang");
     };
 
-  
     initializeLanguage(i18n.resolvedLanguage || "en");
     console.log(i18n.resolvedLanguage, "resolvedLang");
     return () => {};
@@ -72,12 +48,18 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       document.documentElement.lang = language;
     }
   };
- 
+
   return (
     <header>
       <div className="header-container container m-auto">
         <div className="header-logo-container pr-2">
-          <button className="header-logo" onClick={() => {navigate('browse')}} id="truestory-logo">
+          <button
+            className="header-logo"
+            onClick={() => {
+              navigate("browse");
+            }}
+            id="truestory-logo"
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
@@ -128,18 +110,30 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
               <div className="magnifier"></div>
             </div>
           </div>
-          <div className="switch-mode" id="switch-mode" onClick={toggleTheme}></div>
+          <div
+            className="switch-mode"
+            id="switch-mode"
+            onClick={toggleTheme}
+          ></div>
 
           <div>
-          <button className="header-info__mini" onClick={() => {navigate('/')}}>
-            <div className="avatar-mini" style={{ backgroundImage: `url(${avatarMini})` }}></div>
-            <div className="nickname-mini">{profile.nickname}</div>
-          </button>
-            </div>
+            <button
+              className="header-info__mini"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <div
+                className="avatar-mini"
+                style={{ backgroundImage: `url(${avatarMini})` }}
+              ></div>
+              <div className="nickname-mini">{profile.nickname}</div>
+            </button>
+          </div>
         </div>
       </div>
     </header>
-  )}
-
+  );
+};
 
 export default Header;

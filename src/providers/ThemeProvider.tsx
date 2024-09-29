@@ -1,15 +1,13 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { IContext } from "../types/models";
 
-interface IContext {
-  theme: string;
-  toggleTheme: () => void;
-}
+
 
 export const ThemeContext = createContext<IContext | undefined>(undefined);
 
-export function useTheme() {
-  return useContext(ThemeContext);
-}
+// export function useTheme() {
+//   return useContext(ThemeContext);
+// }
 
 export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState("light");
@@ -53,10 +51,6 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
       else {
         btn?.classList.add("drk");
       }
-  
-    
-  
-
   };
 
   return (

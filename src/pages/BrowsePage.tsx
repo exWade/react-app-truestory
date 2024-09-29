@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState, useRef, useMemo } from "react";
 import "../components/Gallery/Gallery.scss";
 import { Card } from "../components/Card/Card";
-import { ICard } from "../types/models";
+import { ICard, IPhoto } from "../types/models";
 import { ModalContext } from "../context/ModalContext";
 import { Modal } from "../components/Modal/Modal";
 import Hub from "../components/Hub/Hub";
@@ -15,16 +15,8 @@ interface BrowsePageProps {
   t: TFunction;
 }
 
-interface Photo {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
-
 const BrowsePage: React.FC<BrowsePageProps> = ({ searched, t }) => {
-  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [photos, setPhotos] = useState<IPhoto[]>([]);
   const { modal, open, close } = useContext(ModalContext);
   const [modalState, setModalState] = useState<ICard>();
 

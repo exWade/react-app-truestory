@@ -1,16 +1,8 @@
 import React, { createContext, useState } from "react";
+import { IModalContext } from "../types/models";
 
 // описываем структуру контекста, типизация
-interface IModalContext {
-  modal: boolean;
-  open: () => void;
-  close: () => void;
 
-  modalCreate: boolean;
-  openCreate: () => void;
-  closeCreate: () => void;
-  
-}
 // Это значение используется по умолчанию, если провайдер контекста не предоставляет фактическое значение, что редко бывает.
 export const ModalContext = createContext<IModalContext>({
   modal: false,

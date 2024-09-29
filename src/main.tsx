@@ -10,7 +10,7 @@ import { ThemeProvider } from "./providers/ThemeProvider.tsx";
 import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  // <StrictMode>
     <ThemeProvider>
       <BrowserRouter>
         <ModalProvider>
@@ -18,5 +18,5 @@ createRoot(document.getElementById("root")!).render(
         </ModalProvider>
       </BrowserRouter>
     </ThemeProvider>
-  </StrictMode>
+  // </StrictMode>
 );

@@ -1,8 +1,8 @@
 import "./Card.scss";
-import { ICard } from "../../types/models";
+import { ICard, IPhoto } from "../../types/models";
 
 interface CardProps {
-  card: ICard;
+  card: ICard | IPhoto;
 
   onModal: CallableFunction;
 }
