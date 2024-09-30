@@ -58,7 +58,7 @@ const Hub = () => {
     <>
       {console.log("return")}
       <div
-        className="progress fixed bottom-[72px] right-4"
+        className="progress fixed bottom-[80px] right-4"
         id="progBar"
         style={{ background: "conic-gradient(rgb(153, 67, 67)" }}
       >
