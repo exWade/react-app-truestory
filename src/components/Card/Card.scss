@@ -9,7 +9,6 @@
   padding-top: 24px;
   padding-right: 30.375px; // *0.9
 
-  will-change: transform;
   border-radius: 16px;
   background-color: var(--bg-card-color);
   color: var(--text-color);
@@ -18,10 +17,10 @@
   // border: 1px solid #d0d3d8;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   // При изменении размера экрана умножить 0.9 на ширину высоту и тд (смотриться криво)
-  -webkit-transition: transform 0.2s linear, box-shadow 0.25s linear;
-  -moz-transition: transform 0.2s linear, box-shadow 0.25s linear;
-  -o-transition: transform 0.2s linear, box-shadow 0.25s linear;
-  transition: transform 0.2s linear, box-shadow 0.25s linear;
+  -webkit-transition: box-shadow 0.25s linear;
+  -moz-transition: box-shadow 0.25s linear;
+  -o-transition: box-shadow 0.25s linear;
+  transition: box-shadow 0.25s linear;
   /* , background-color 0.55s ease */
   -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
   backface-visibility: hidden;
@@ -29,7 +28,7 @@
   cursor: default;
 
   &:hover {
-    box-shadow: 0px 0px 12px -4px var(--anchor-color);
+    // box-shadow: 0px 0px 12px -4px var(--anchor-color);
     transition: box-shadow 0.25s linear;
   }
 
@@ -53,7 +52,7 @@
       height: 270px; // *0.9
       border-radius: 8px;
       width: 270px;
-      will-change: transform;
+      // will-change: transform;
       cursor: pointer;
       overflow: hidden;
       /* transform: translate(0); */
@@ -68,7 +67,7 @@
         -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
         backface-visibility: hidden;
         background-repeat: no-repeat;
-        will-change: transform;
+        // will-change: transform;
         /* transform: translate(0); */
         transition: transform 0.15s linear;
       }
