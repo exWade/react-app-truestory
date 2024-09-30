@@ -12,6 +12,10 @@
       transition: transform 0.15s linear;
     }
   }
+  /* Стили для активного перетаскивания */
+.photo-card.dragging {
+  box-shadow: 0px 0px 12px -4px var(--anchor-color);
+}
 }
 
 
