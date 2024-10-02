@@ -59,6 +59,9 @@ body {
   overflow-x: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);
+  
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
 }
 
 .shortgray {

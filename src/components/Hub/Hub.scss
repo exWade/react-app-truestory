@@ -44,3 +44,16 @@
   width: 0;
   height: 0;
 }
+
+
+// // md
+@media screen and (max-width: 768px) {
+  .add-Btn, .progress {
+    width: 40px;
+    height: 40px;
+  }
+
+  .progress {
+    bottom: 70px;
+  }
+}

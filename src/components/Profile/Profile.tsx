@@ -16,7 +16,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <>
+    <section className="shadow">
       <div className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
         <div
           className="background__image"
@@ -94,7 +94,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

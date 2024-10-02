@@ -8,7 +8,7 @@
   padding-left: 30.375px; // *0.9
   padding-top: 24px;
   padding-right: 30.375px; // *0.9
-
+  box-shadow: 2px 4px 12px #00000014;
   border-radius: 16px;
   background-color: var(--bg-card-color);
   color: var(--text-color);
@@ -100,12 +100,13 @@
     .addition {
       position: absolute;
       display: flex;
+      width: 100%;
       justify-content: flex-end;
       text-align: right;
       bottom: 16px;
       right: 0px;
       font-weight: bold;
-      will-change: unset !important;
+      // will-change: unset !important;
       backface-visibility: hidden;
       transform: translateZ(0); /* Добавляем аппаратное ускорение */
       user-select: none;
@@ -113,8 +114,9 @@
         position: relative;
         font-weight: normal;
         max-width: 100%;
-        will-change: unset !important; /* Убираем will-change */
+        // will-change: unset !important; /* Убираем will-change */
         backface-visibility: hidden;
+        transform: translateZ(0);
         transition: width 0.3s;
         /* , color .5s ease */
       }
@@ -171,3 +173,12 @@
   }
 }
 // }
+
+span.nowrap {
+  display: inline-block;
+  text-decoration: inherit;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
