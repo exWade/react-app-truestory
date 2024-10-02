@@ -58,12 +58,12 @@ const Hub = () => {
     <>
       {console.log("return")}
       <div
-        className="progress fixed bottom-[72px] right-4"
+        className="progress fixed bottom-[80px] right-4"
         id="progBar"
         style={{ background: "conic-gradient(rgb(153, 67, 67)" }}
       >
         <button
-          className="toTop-Btn rounded-[25%] text-white text-2xl px-4 select-none"
+          className="toTop-Btn rounded-[25%] text-white text-2xl select-none"
           onClick={() => {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

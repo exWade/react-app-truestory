@@ -14,21 +14,9 @@
   --anchor-color: #404040;
   --lang-color: #dadada;
   --inverting-icon-color: invert(0);
-
+  --header-shadow: rgba(34, 60, 80, 0.15);
   //  background-color: var(--bg-color);
 }
-// Старый вариант стилей
-// [data-theme="dark"] {
-//   --bg-color: #0f172a;
-//   --header-bg-color: #0f172a;
-//   --nav-input-color: #1e293b;
-//   --bg-card-color: #1a263a;
-//   --card-border-color: #94a3b8;
-//   --text-color: #e2e8f0;
-//   --anchor-color: #94a3b8;
-//   --lang-color: #29385e;
-//   --inverting-icon-color: invert(1);
-// }
 
 [data-theme="dark"] {
   --bg-color: #121212; /* Фон страницы (черный/серый оттенок) */
@@ -40,6 +28,7 @@
   --anchor-color: #686868;
   --lang-color: #404040; /* Цвет для языка (нейтральный серый) */
   --inverting-icon-color: invert(1); /* Цвет инвертированных иконок */
+  --header-shadow: rgba(34, 60, 80, 0.15);
   /* Полоса прокрутки в целом */
   scrollbar-color: #686868 #424242;
 }
@@ -70,6 +59,9 @@ body {
   overflow-x: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);
+  
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
 }
 
 .shortgray {

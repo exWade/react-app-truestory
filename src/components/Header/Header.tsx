@@ -76,21 +76,21 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                   data-lang="en"
                   onClick={() => changeLang("en")}
                 >
-                  <div className="flag en"></div> English
+                  <div className="flag en"></div> <span>English</span> 
                 </li>
                 <li
                   className="langs__item"
                   data-lang="tk"
                   onClick={() => changeLang("tk")}
                 >
-                  <div className="flag tk"></div>Türkçe
+                  <div className="flag tk"></div><span>Türkçe</span> 
                 </li>
                 <li
                   className="langs__item"
                   data-lang="rs"
                   onClick={() => changeLang("rs")}
                 >
-                  <div className="flag rs"></div>Српски
+                  <div className="flag rs"></div><span>Српски</span> 
                 </li>
               </ul>
             </div>

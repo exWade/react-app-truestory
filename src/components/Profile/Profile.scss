@@ -290,6 +290,9 @@
       }
     }
   }
+  .profile {
+    padding: 0px 8px;
+  }
 }
 // // lg
 @media screen and (max-width: 1024px) {
@@ -413,3 +416,8 @@ summary.skeleton::-webkit-details-marker {
 // .social-box.skeleton {
 //   background-color: #e2e8f0;
 // }
+
+.shadow {
+  box-shadow: 2px 4px 12px #00000014;
+  border-radius: 25%;
+}

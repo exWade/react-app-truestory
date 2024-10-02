@@ -14,7 +14,6 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
 
   const [data, setData] = useState<ICard>({
     id: ++cards.length,
-    order: 1,
     title: "",
     description: "",
     place: "",
@@ -53,7 +52,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         method="POST"
         className="form flex flex-col w-[24vw] transition-all"
       >
-        <h2 className="lng-creatingTitle mb-1 pl-1 font-bold tracking-wider">
+        <h2 className="lng-creatingTitle mb-1 pl-1 tracking-wider">
           {t("creatingTitle")}
         </h2>
         <input
@@ -68,7 +67,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           required
         />
 
-        <h2 className="lng-creatingUrl mb-1 pl-1 font-bold tracking-wider">
+        <h2 className="lng-creatingUrl mb-1 pl-1 tracking-wider">
           {t("creatingUrl")}
         </h2>
         <input
@@ -80,7 +79,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           onChange={changeHandler}
           required
         />
-        <h2 className="lng-creatingDescription mb-1 pl-1 font-bold tracking-wider">
+        <h2 className="lng-creatingDescription mb-1 pl-1 tracking-wider">
           {t("creatingDescription")}
         </h2>
         <textarea
@@ -97,7 +96,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           onChange={changeAreaHandler}
           maxLength={500}
         />
-        <h2 className="lng-creatingPlace mb-1 pl-1 font-bold tracking-wider">
+        <h2 className="lng-creatingPlace mb-1 pl-1 tracking-wider">
           {t("creatingPlace")}
         </h2>
         <input
@@ -111,7 +110,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           maxLength={16}
           required
         />
-        <h2 className="lng-creatingYear mb-1 pl-1 font-bold tracking-wider">
+        <h2 className="lng-creatingYear mb-1 pl-1 tracking-wider">
           {t("creatingYear")}
         </h2>
         <input
@@ -130,7 +129,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         <button
           type="submit"
           value="create"
-          className="lng-creatingBtn font-bold mt-4 py-2 px-3 rounded-lg w-[45%] self-center text-gray-100 transition-all delay-200 duration-300 ease-out"
+          className="lng-creatingBtn mt-4 py-2 px-3 rounded-lg w-[45%] self-center text-gray-100 transition-all delay-200 duration-300 ease-out"
         >
           {t("creatingBtn")}
         </button>

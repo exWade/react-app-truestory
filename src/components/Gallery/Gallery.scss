@@ -1,10 +1,10 @@
 .workspace {
   .photo-card {
     &:hover {
-      -webkit-transform: scale(1.05);
-      -moz-transform: scale(1.05);
-      -o-transform: scale(1.05);
-      transform: scale(1.05);
+      -webkit-transform: scale(1.025);
+      -moz-transform: scale(1.025);
+      -o-transform: scale(1.025);
+      transform: scale(1.025);
       
       -webkit-transition: transform 0.15s linear;
       -moz-transition: transform 0.15s linear;

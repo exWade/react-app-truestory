@@ -5,13 +5,15 @@ header {
   top: 0;
   width: 100% !important;
   height: 64px;
-  font-size: 32px;
+  font-size: 24px;
   background-color: var(--header-bg-color);
-  border-bottom: 2px solid var(--nav-input-color);
+  // border-bottom: 2px solid var(--nav-input-color);
   z-index: 10;
 
+  box-shadow: var(--header-shadow) 0px 2px 6px -2px;
+
   .header-container {
-    height: inherit;
+    height: 24px;
     // width: calc(1622px * 0.9 * 0.9);
      
     // margin: auto;
@@ -39,11 +41,11 @@ header {
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
-        font-size: 26px;
+        font-size: 24px;
       }
 
       .header-logo__camera {
-        height: 28px;
+        height: 24px;
         margin-right: 4px;
         background-image: url("https://cdn-icons-png.flaticon.com/128/2965/2965705.png");
         background-repeat: no-repeat;
@@ -103,7 +105,7 @@ header {
               transition: all 0.15s linear;
             }
 
-            li {
+            .langs__item {
               display: flex;
               justify-content: start;
               align-content: center;
@@ -119,6 +121,10 @@ header {
 
               &:hover {
                 background-color: var(--lang-color);
+              }
+
+              span {
+                align-self: center;
               }
             }
 
@@ -172,7 +178,7 @@ header {
         display: flex;
         // width: 200px;
         height: inherit;
-        margin-right: 20px;
+        margin-right: 16px;
         justify-content: center;
         .search {
           height: inherit;
@@ -190,12 +196,12 @@ header {
             border-radius: 4px;
             position: relative;
             user-select: none;
-            height: 26px;
+            height: 24px;
             border-style: none;
             background-color: var(--nav-input-color);
             color: var(--text-color);
             font-size: 16px;
-            padding: 0px 30px 0 8px;
+            padding: 0px 8px 0 32px;
 
             transition: outline-color 0.3s linear;
             /* , background-color .5s ease */
@@ -221,7 +227,7 @@ header {
           .magnifier {
             position: absolute;
             opacity: 0.65;
-            right: 8px;
+            left: 8px;
             width: 16px;
             height: 16px;
             background-image: url("https://cdn-icons-png.flaticon.com/64/3031/3031293.png");
@@ -240,9 +246,9 @@ header {
       }
 
       .switch-mode {
-        width: 22px;
-        height: 100%;
-        height: inherit;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
         cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
@@ -271,11 +277,12 @@ header {
         /* border-right: 1px solid var(--bg-card-color); */
         height: 100%;
         max-width: 170px;
-        padding: 0 0px 0 10px;
+        padding: 0 0px 0 16px;
         /* padding: 0 16px; */
         display: flex;
         align-items: center;
         margin-left: 8px;
+        border-left: 1px solid var(--nav-input-color);
         /* background-color: var(--bg-card-color); */
 
         .avatar-mini {
@@ -305,7 +312,7 @@ header {
 }
 
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   
   .nickname-mini {
     display: none !important;
@@ -313,7 +320,7 @@ header {
  
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 365px) {
   
   .header-logo__camera {
     display: none !important;

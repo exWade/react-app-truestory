@@ -293,7 +293,18 @@
   }
   
   @media screen and (max-width:calc(812px*0.9*0.9)) {
-    
+    .mdl-title h1 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      
+    }
+
+    .form input {
+      margin-bottom: 0.5rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
+    }
+
     .background__container {
       min-height: 120px !important;
     }
@@ -309,7 +320,7 @@
     }
   
     .header-container {
-      margin: 0 !important;
+      // margin: 0 !important;
       padding: 0 8px !important;
     }
   
