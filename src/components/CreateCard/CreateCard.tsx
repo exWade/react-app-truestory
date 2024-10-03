@@ -19,7 +19,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
     place: "",
     year: today.getFullYear(),
     url: "",
-    thumbnailUrl: ""
+    thumbnailUrl: "",
   });
 
   const submitHandler = (event: React.FormEvent) => {
@@ -47,31 +47,38 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
       </div>
 
       <form
-        action=""
+        action="#"
         onSubmit={submitHandler}
         method="POST"
         className="form flex flex-col w-[24vw] transition-all"
       >
-        <h2 className="lng-creatingTitle mb-1 pl-1 tracking-wider">
+        <label
+          htmlFor="title"
+          className="lng-creatingTitle mb-1 pl-1 tracking-wider"
+        >
           {t("creatingTitle")}
-        </h2>
+        </label>
         <input
           type="text"
+          id="title"
           name="title"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.title}
           onChange={changeHandler}
-          minLength={2}
-          maxLength={30}
+          pattern="[A-Za-zА-Яа-яЁё\s\d]{2,30}"
           required
         />
 
-        <h2 className="lng-creatingUrl mb-1 pl-1 tracking-wider">
+        <label
+          htmlFor="url"
+          className="lng-creatingUrl mb-1 pl-1 tracking-wider"
+        >
           {t("creatingUrl")}
-        </h2>
+        </label>
         <input
           type="url"
+          id="url"
           name="url"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
@@ -79,10 +86,14 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           onChange={changeHandler}
           required
         />
-        <h2 className="lng-creatingDescription mb-1 pl-1 tracking-wider">
+        <label
+          htmlFor="description"
+          className="lng-creatingDescription mb-1 pl-1 tracking-wider"
+        >
           {t("creatingDescription")}
-        </h2>
+        </label>
         <textarea
+          id="description"
           name="description"
           className="border-solid border-2 h-[12vh] border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{
@@ -96,25 +107,32 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           onChange={changeAreaHandler}
           maxLength={500}
         />
-        <h2 className="lng-creatingPlace mb-1 pl-1 tracking-wider">
+        <label
+          htmlFor="place"
+          className="lng-creatingPlace mb-1 pl-1 tracking-wider"
+        >
           {t("creatingPlace")}
-        </h2>
+        </label>
         <input
+          required
+          pattern="[A-Za-zА-Яа-яЁё\s]{2,16}"
           type="text"
+          id="place"
           name="place"
           className="border-solid border-2 border-gray-600 py-2 px-3 mb-4 focus:border-gray-400 transition-all"
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.place}
           onChange={changeHandler}
-          minLength={2}
-          maxLength={16}
-          required
         />
-        <h2 className="lng-creatingYear mb-1 pl-1 tracking-wider">
+        <label
+          htmlFor="year"
+          className="lng-creatingYear mb-1 pl-1 tracking-wider"
+        >
           {t("creatingYear")}
-        </h2>
+        </label>
         <input
           type="number"
+          id="year"
           name="year"
           min="1900"
           max={today.getFullYear()}

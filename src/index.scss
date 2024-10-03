@@ -46,7 +46,7 @@ html {
   // background-color: rgb(23 23 23);
 
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 
   // background-color: var(--bg-color);
 }
@@ -55,7 +55,7 @@ body {
   color: var(--text-color);
   min-height: 100vh !important;
   font-family: Helvetica, sans-serif;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);

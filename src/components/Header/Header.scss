@@ -84,7 +84,7 @@ header {
             justify-content: center;
             align-items: center;
             position: absolute;
-            bottom: -120px;
+            bottom: -130px;
             height: auto;
             width: auto;
             display: none;
@@ -228,8 +228,8 @@ header {
             position: absolute;
             opacity: 0.65;
             left: 8px;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             background-image: url("https://cdn-icons-png.flaticon.com/64/3031/3031293.png");
             filter: var(--inverting-icon-color);
             background-position: center;
@@ -286,8 +286,8 @@ header {
         /* background-color: var(--bg-card-color); */
 
         .avatar-mini {
-          width: 30px;
-          height: 30px;
+          width: 24px;
+          height: 24px;
           margin-right: 12px;
           border-radius: 50%;
           background-color: var(--nav-input-color);

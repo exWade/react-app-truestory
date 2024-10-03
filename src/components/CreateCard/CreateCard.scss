@@ -10,3 +10,12 @@
 .lng-creatingBtn {
 	background-color: var(--anchor-color);
 }
+
+button[type=submit]:hover {
+	filter: invert(1);
+	transition: filter .3s ease-in-out;
+}
+
+input:user-invalid {
+	border-color: rgb(141, 28, 28);
+}
