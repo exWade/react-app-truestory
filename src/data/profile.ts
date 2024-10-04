@@ -1,6 +1,6 @@
 import { IAccount } from '../types/models'
 import { cards } from './cards'
-import backgroundImage from '../assets/background2.jpg';
+import backgroundImage from '../assets/background.jpg';
 import profilePhoto from '../assets/profile_photo.jpg'
 
 export const profile: IAccount = {

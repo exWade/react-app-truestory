@@ -1,25 +1,22 @@
 .background__container {
-  position: relative;
-  // min-height: 320px*0.9;
+  min-height: 168px;
+  width: auto;
   background-color: var(--nav-input-color);
-  // margin-left: auto;
-  // margin-right: auto;
   border-radius: 16px 16px 0px 0px;
   overflow: hidden;
   // max-width : calc(1622px*0.9*0.9);
 
   & .background__image {
-    position: absolute;
+    overflow: hidden;
     inset: 0;
-    min-height: 100%;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center -55vh;
-    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 .profile {
+  position: absolute;
   background-color: var(--bg-card-color);
   border-radius: 16px;
   height: 180px * 0.9;

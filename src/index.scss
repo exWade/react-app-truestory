@@ -43,20 +43,15 @@
 
 html {
   scroll-behavior: smooth;
-  // background-color: rgb(23 23 23);
-
   overflow-x: hidden;
   overflow-y: scroll;
-
-  // background-color: var(--bg-color);
 }
 
 body {
   color: var(--text-color);
   min-height: 100vh !important;
   font-family: Helvetica, sans-serif;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);
   
@@ -66,7 +61,6 @@ body {
 
 .shortgray {
   color: var(--anchor-color);
-  /* transition: color .5s ease; */
 }
 
 .container {
@@ -105,7 +99,7 @@ body {
   }
 }
 [data-theme="dark"] .skeleton {
-  background-color: var(--nav-input-color); /* Используем темно-серый цвет из вашей палитры */
+  background-color: var(--nav-input-color);
 }
 
 

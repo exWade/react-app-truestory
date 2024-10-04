@@ -1,4 +1,3 @@
-import React from "react";
 import SkeletonCard from "./SkeletonCard";
 import "../components/Gallery/Gallery.scss";
 

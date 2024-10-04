@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import "./Hub.scss";
 import { ModalContext } from "../../context/ModalContext";
 

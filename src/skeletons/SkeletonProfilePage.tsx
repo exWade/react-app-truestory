@@ -1,4 +1,3 @@
-import React from "react";
 import SkeletonGallery from "./SkeletonGallery";
 import SkeletonProfile from "./SkeletonProfile";
 

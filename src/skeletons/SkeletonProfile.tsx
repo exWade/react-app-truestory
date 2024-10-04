@@ -1,10 +1,9 @@
-import React from "react";
 import "../components/Profile/Profile.scss";
 
 const SkeletonProfile = () => {
   return (
     <>
-      <div className="background__container skeleton min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
+      <div className="background__container h-[168px] 2xl:h-[288px] xl:h-[288px] lg:h-[288px] md:h-[248px] sm:h-[168px]">
         <div className="background__image"></div>
       </div>
 
@@ -15,7 +14,6 @@ const SkeletonProfile = () => {
             <div className="names__group">
               <div className="nickname__group">
                 <div className=" skeleton w-40 h-6"></div>
-                {/* <div className="skeleton w-4 h-4"></div> */}
               </div>
               <div className="shortgray skeleton w-24 h-5 pl-[4px] pt-[8px]"></div>
             </div>

@@ -17,16 +17,27 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
   }
   return (
     <section className="shadow">
-      <div className="background__container min-h-[168px] xl:min-h-[288px] lg:min-h-[288px] md:min-h-[248px] sm:min-h-[168px]">
-        <div
+      <div className="background__container h-[168px] 2xl:h-[288px] xl:h-[288px] lg:h-[288px] md:h-[248px] sm:h-[168px]">
+        <img
+          srcSet={
+          `${profile.backgroundImage}?width=100 100w,
+          ${profile.backgroundImage}?width=200 200w,
+          ${profile.backgroundImage}?width=400 400w,
+          ${profile.backgroundImage}?width=800 800w`
+          }
+          sizes="(max-width: 800px) 100vw, 50vw"
+          alt="Background profile image"
+          src={`${profile.backgroundImage}`}
           className="background__image"
-          style={{ backgroundImage: `url(${profile.backgroundImage})` }}
         />
       </div>
 
       <section className="profile" id="profile-js">
         <div className="profile__main h-[240px]">
-          <div className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]" style={{backgroundImage: `url(${profile.photo}`}}>
+          <div
+            className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]"
+            style={{ backgroundImage: `url(${profile.photo}` }}
+          >
             <div className="profile__status">
               <span className="text-2xl leading-8">{profile.status}</span>
             </div>
@@ -60,7 +71,10 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
           </div>
         </div>
 
-        <details className="profile__about hidden xl:block lg:block md:hidden sm:hidden" id="profile__about">
+        <details
+          className="profile__about hidden xl:block lg:block md:hidden sm:hidden"
+          id="profile__about"
+        >
           <summary className="lng-about shortgray pb-[16px]">
             {t("about")}
           </summary>
@@ -78,19 +92,24 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
           <div className="counters__group">
             <div className="counters__group-items flex-col xl:flex-row lg:flex-row md:flex-col sm:flex-col xl:w[280px] lg:w-[280px] md:w-[200px] sm:w-[160px]">
               <div className="counter-box self-start">
-                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{counted}</div>
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">
+                  {counted}
+                </div>
                 <h3 className="shortgray">{t("countersCards")}</h3>
               </div>
               <div className="counter-box self-start">
-                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.followersCount}</div>
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">
+                  {profile.followersCount}
+                </div>
                 <h3 className="shortgray">{t("countersFollowers")}</h3>
               </div>
               <div className="counter-box self-start">
-                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">{profile.followingCount}</div>
+                <div className="counter self-start xl:self-center lg:self-center md:self-start sm:self-start">
+                  {profile.followingCount}
+                </div>
                 <h3 className="shortgray">{t("countersFollowing")}</h3>
               </div>
             </div>
-            
           </div>
         </div>
       </section>

@@ -23,7 +23,7 @@ export function Modal({ card, onClose }: ModalProps) {
           <div className="whiteboard-container">
             <div
               className="modal-left-side"
-              style={{ backgroundImage: `url(${card?.url})` }}
+              style={{ backgroundImage: `url(${card?.thumbnailUrl})` }}
             >
               <div className="modalImage-container">
                 <img

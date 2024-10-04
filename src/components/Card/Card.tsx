@@ -26,7 +26,6 @@ export function Card({ card, onModal }: CardProps) {
           className="card-image"
           id="card-img"
           src={`${card.thumbnailUrl ? card.thumbnailUrl : card.url}`}
-          // style={{ backgroundImage: `url(${card.url})` }}
           alt={card.title}
           onError={(event) => {
             const target = event.target as HTMLImageElement;

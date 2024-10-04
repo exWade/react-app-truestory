@@ -56,13 +56,14 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           <button
             className="header-logo"
             onClick={() => {
-              navigate("browse");
+              navigate("browse", {replace: false});
             }}
             id="truestory-logo"
           >
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
+              alt="Truestory logo"
             ></img>{" "}
             <span className="hidden xl:inline lg:inline md:inline sm:hidden align-bottom h-[26px]">
               Truestory
@@ -101,8 +102,9 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
           <div className="form-search-container w-[150px] xl:w-[200px] lg:w-[200px] md:w-[200px] sm:w-[150px]">
             <div className="search">
               <input
-                type="text"
+                type="search"
                 id="search-content"
+                name="q"
                 onChange={handleSearchQuery}
                 placeholder={t("search") ? t("search") : "Search"}
                 className="header-search"
@@ -120,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
             <button
               className="header-info__mini"
               onClick={() => {
-                navigate("/");
+                navigate("/", {replace: false});
               }}
             >
               <div

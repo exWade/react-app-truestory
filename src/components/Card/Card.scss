@@ -40,7 +40,7 @@
   .photo-card-content {
     position: relative;
     display: block;
-
+    width: 100%;
     overflow: hidden;
 
     //  transform: translate(0);
@@ -48,7 +48,7 @@
     .card-img-container {
       height: 270px; // *0.9
       border-radius: 8px;
-      width: 270px;
+      width: auto;
       // will-change: transform;
       cursor: pointer;
       overflow: hidden;
@@ -58,6 +58,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        content-visibility: auto;
         background-color: var(--nav-input-color);
         user-select: none;
         pointer-events: none;

@@ -1,13 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { IContext } from "../types/models";
 
-
-
 export const ThemeContext = createContext<IContext | undefined>(undefined);
-
-// export function useTheme() {
-//   return useContext(ThemeContext);
-// }
 
 export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState("light");
@@ -25,11 +19,8 @@ export const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
       const defaultTheme = prefersDarkScheme ? "dark" : "light";
       setTheme(defaultTheme);
       document.documentElement.setAttribute("data-theme", defaultTheme);
-
-      
     }
   
-
   }, []);
 
   if (document.documentElement.getAttribute('data-theme') == 'dark') {

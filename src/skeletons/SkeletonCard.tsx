@@ -1,4 +1,3 @@
-import React from "react";
 import "../components/Card/Card.scss";
 
 const SkeletonCard = () => {

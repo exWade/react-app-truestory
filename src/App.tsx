@@ -1,4 +1,3 @@
-// import "./resolutions.scss";
 import Header from "./components/Header/Header.tsx";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense, useState } from "react";

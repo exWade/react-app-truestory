@@ -7,21 +7,16 @@ header {
   height: 64px;
   font-size: 24px;
   background-color: var(--header-bg-color);
-  // border-bottom: 2px solid var(--nav-input-color);
   z-index: 10;
 
   box-shadow: var(--header-shadow) 0px 2px 6px -2px;
 
   .header-container {
     height: 24px;
-    // width: calc(1622px * 0.9 * 0.9);
-     
-    // margin: auto;
     display: flex;
     position: relative;
     justify-content: space-between;
-    // padding-left: 1.5vw;
-    // padding-right: 1.9vw;
+
 
     .header-logo-container {
       display: flex;
@@ -34,7 +29,6 @@ header {
       text-align: center;
       text-transform: uppercase;
       user-select: none;
-      /* transition: color .5s ease; */
 
       .header-logo {
         display: flex;
@@ -46,6 +40,7 @@ header {
 
       .header-logo__camera {
         height: 24px;
+        width: 24px;
         margin-right: 4px;
         background-image: url("https://cdn-icons-png.flaticon.com/128/2965/2965705.png");
         background-repeat: no-repeat;
@@ -204,7 +199,6 @@ header {
             padding: 0px 8px 0 32px;
 
             transition: outline-color 0.3s linear;
-            /* , background-color .5s ease */
           }
 
           .header-search .magnifier {
@@ -236,7 +230,6 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
             transition: transform 0.3s ease, opacity 0.3s linear;
-            /* filter .5s ease, */
           }
 
           &:hover .magnifier {
@@ -273,8 +266,6 @@ header {
       .header-info__mini {
         user-select: none;
         // pointer-events: none;
-        // border-left: 1px solid var(--nav-input-color);
-        /* border-right: 1px solid var(--bg-card-color); */
         height: 100%;
         max-width: 170px;
         padding: 0 0px 0 16px;
