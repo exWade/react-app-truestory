@@ -10,6 +10,7 @@ const CreateCardModal = ({children}: {children: React.ReactNode}) => {
       <div className="modal" id="modalWindow" onClick={closeCreate}>
         <div
           className="modal-whiteboard flex justify-center"
+           role="document"
           onClick={(e) => {
             e.stopPropagation();
           }}

@@ -16,23 +16,21 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <section className="shadow">
+    <section className="profile" aria-label="User's profile description">
       <div className="background__container h-[168px] 2xl:h-[288px] xl:h-[288px] lg:h-[288px] md:h-[248px] sm:h-[168px]">
         <img
-          srcSet={
-          `${profile.backgroundImage}?width=100 100w,
+          srcSet={`${profile.backgroundImage}?width=100 100w,
           ${profile.backgroundImage}?width=200 200w,
           ${profile.backgroundImage}?width=400 400w,
-          ${profile.backgroundImage}?width=800 800w`
-          }
+          ${profile.backgroundImage}?width=800 800w`}
           sizes="(max-width: 800px) 100vw, 50vw"
-          alt="Background profile image"
+          alt="Background profile image picked by user"
           src={`${profile.backgroundImage}`}
           className="background__image"
         />
       </div>
 
-      <section className="profile" id="profile-js">
+      <div className="shadow" id="profile-js">
         <div className="profile__main h-[240px]">
           <div
             className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]"
@@ -57,7 +55,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
                 <div className="social social__phone"></div>
               </a>
               <a href="mailto:exwadecoop@gmail.com" className="social-box">
-                <div className="social social__mail"></div>
+                <div className="social social__mail" tabIndex={-1}></div>
               </a>
               <a
                 href="https://github.com/exWade"
@@ -112,7 +110,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

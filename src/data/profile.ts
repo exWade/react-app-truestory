@@ -1,11 +1,11 @@
 import { IAccount } from '../types/models'
 import { cards } from './cards'
-import backgroundImage from '../assets/background.jpg';
+import backgroundImage from '../assets/background.avif';
 import profilePhoto from '../assets/profile_photo.jpg'
 
 export const profile: IAccount = {
   "nickname": 'vileontev',
-  "firstName": 'Vitaly',
+  "firstName": 'Vitalii',
   "photo": profilePhoto,
   "status": '🎯',
   "about": {

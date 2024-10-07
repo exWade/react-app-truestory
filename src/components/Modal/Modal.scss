@@ -23,7 +23,7 @@
   .modal {
       display: flex;
       position: fixed;
-      z-index: 10000;
+      z-index: 105;
       align-items: center;
       justify-content: center;
       left: 0;
@@ -120,7 +120,7 @@
                       word-wrap: break-word;
                       word-break: keep-all;
                       width: 100%;
-                      line-height: 1.3em;
+                      line-height: 1.3;
                   }
   
                   .modalImage-caption {
@@ -295,7 +295,7 @@
   @media screen and (max-width:calc(812px*0.9*0.9)) {
     .mdl-title h1 {
       font-size: 1.5rem;
-      line-height: 1.5rem;
+      line-height: 1.5;
       
     }
 

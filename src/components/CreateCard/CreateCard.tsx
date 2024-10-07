@@ -36,7 +36,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
   };
 
   return (
-    <div className="sides flex flex-row items-center transition-all overflow-hidden">
+    <div className="sides flex flex-row items-center transition-all overflow-y-auto p-4">
       <div className="mdl-title flex flex-col w-[24vw] mr-[8vw] transition-all ">
         <h1 className=" lng-creatingUnit text-4xl mb-[2vh] text-center transition-all select-none">
           {t("creatingUnit")}
@@ -49,7 +49,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
       <form
         action="#"
         onSubmit={submitHandler}
-        method="POST"
+        method="post"
         className="form flex flex-col w-[24vw] transition-all"
       >
         <label
@@ -66,7 +66,8 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.title}
           onChange={changeHandler}
-          pattern="[A-Za-zА-Яа-яЁё\s\d]{2,30}"
+          pattern="[\p{L} \-]{2,30}"
+          enterKeyHint="next"
           required
         />
 
@@ -84,6 +85,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.url}
           onChange={changeHandler}
+          enterKeyHint="next"
           required
         />
         <label
@@ -115,7 +117,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         </label>
         <input
           required
-          pattern="[A-Za-zА-Яа-яЁё\s]{2,16}"
+          pattern="[\p{L} \-]{2,16}"
           type="text"
           id="place"
           name="place"
@@ -123,6 +125,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.place}
           onChange={changeHandler}
+          enterKeyHint="next"
         />
         <label
           htmlFor="year"
@@ -141,6 +144,7 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
           style={{ backgroundColor: "transparent", borderRadius: "8px" }}
           value={data.year}
           onChange={changeHandler}
+          enterKeyHint="done"
           required
         />
 

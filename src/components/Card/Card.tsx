@@ -29,7 +29,7 @@ export function Card({ card, onModal }: CardProps) {
           alt={card.title}
           onError={(event) => {
             const target = event.target as HTMLImageElement;
-            target.src = `https://placehold.co/300x300?text=${card.title}`}}
+            target.src = `https://placehold.co/280x280?text=${card.title}`}}
         />
       </div>
       <div className="image-caption">{card.title}</div>

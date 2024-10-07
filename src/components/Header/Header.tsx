@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
 
   return (
     <header>
-      <div className="header-container container m-auto">
+      <nav className="header-container container m-auto">
         <div className="header-logo-container pr-2">
           <button
             className="header-logo"
@@ -133,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

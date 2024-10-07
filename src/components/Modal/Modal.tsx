@@ -10,9 +10,11 @@ export function Modal({ card, onClose }: ModalProps) {
   const today = new Date();
   return (
     <>
+    
       <div className="modal" id="modalWindow" onClick={onClose}>
         <div
           className="modal-whiteboard"
+           role="document"
           onClick={(e) => {
             e.stopPropagation();
           }}

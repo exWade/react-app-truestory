@@ -1,0 +1,19 @@
+# Allow all user agents to crawl everything
+User-agent: *
+Allow: /
+
+# Block access to certain sensitive or irrelevant files and directories
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /vite.config.js
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /tsconfig.json
+
+# Block access to the build output directory (adjust the name if it's different)
+Disallow: /dist/
+
+# Block access to certain files in the public folder if needed
+Disallow: /public/secret-file.txt
+
+
