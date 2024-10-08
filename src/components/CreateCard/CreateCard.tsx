@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ICard } from "../../types/models";
 import { cards } from "../../data/cards";
 import "./CreateCard.scss";
 import { TFunction } from "i18next";
+import { ModalContext } from "../../context/ModalContext";
 
 interface CreateCardProps {
   onCreate: (card: ICard) => void;
@@ -11,6 +12,8 @@ interface CreateCardProps {
 
 const CreateCard = ({ onCreate, t }: CreateCardProps) => {
   const today = new Date();
+
+  const { closeCreate } = useContext(ModalContext); 
 
   const [data, setData] = useState<ICard>({
     id: ++cards.length,
@@ -155,6 +158,11 @@ const CreateCard = ({ onCreate, t }: CreateCardProps) => {
         >
           {t("creatingBtn")}
         </button>
+        
+        <button formMethod="dialog" type="submit" className="close" onClick={closeCreate}>
+            ×
+          </button>
+
       </form>
     </div>
   );

@@ -18,6 +18,9 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
   const [modal, setModal] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
 
+  const dialog =
+    (document.querySelector(".modal") as HTMLDialogElement) || undefined;
+
   const open = () => {
     setModal(true);
     document.documentElement.style.overflow = "hidden";
@@ -29,10 +32,12 @@ export const ModalProvider = ({ children }: { children: React.ReactNode }) => {
 
   const openCreate = () => {
     setModalCreate(true);
+    // dialog?.showModal();
     document.documentElement.style.overflow = "hidden";
   };
   const closeCreate = () => {
     setModalCreate(false);
+    // dialog?.close();
     document.documentElement.style.overflow = "";
   };
 

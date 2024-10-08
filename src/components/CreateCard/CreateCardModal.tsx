@@ -1,27 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import "../Modal/Modal.scss";
 
-const CreateCardModal = ({children}: {children: React.ReactNode}) => {
-    const { closeCreate } = useContext(ModalContext);
+const CreateCardModal = ({children}: {children: React.ReactNode}) => {    const ref = useRef();
+    const { modalCreate, closeCreate } = useContext(ModalContext);   
+
+    useEffect(() => {
+      if (modalCreate) {
+        ref.current?.showModal();
+      } else {
+        ref.current?.close();
+      }
+    }, [modalCreate]);
 
   return (
-    <>
-      <div className="modal" id="modalWindow" onClick={closeCreate}>
+      <dialog className="modal" onCancel={closeCreate} ref={ref} id="modalWindow">
         <div
           className="modal-whiteboard flex justify-center"
-           role="document"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
+          // onClick={(e) => {
+          //   e.stopPropagation();
+          // }}
         >
-          <span className="close" onClick={closeCreate}>
-            ×
-          </span>
+          
           {children}
         </div>
-      </div>
-    </>
+      </dialog>
   );
 };
 

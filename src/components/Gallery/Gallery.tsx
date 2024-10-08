@@ -71,20 +71,20 @@ export function Gallery({ searched, counting, t }: GalleryProps) {
     };
 
     // Обработчик нажатия клавиши Escape для закрытия модальных окон
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        close();
-        closeCreate();
-      }
-    };
+    // const handleEscape = (e: KeyboardEvent) => {
+    //   if (e.key === "Escape") {
+    //     close();
+    //     closeCreate();
+    //   }
+    // };
 
-    document.addEventListener("keydown", handleEscape);
+    // document.addEventListener("keydown", handleEscape);
 
     // Подсчитываем количество отображаемых карточек
     handleCountQuery(searchedCards.length);
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      // document.removeEventListener("keydown", handleEscape);
     };
   }, [searchedCards.length, close, closeCreate, counting]);
 
