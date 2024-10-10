@@ -3,6 +3,9 @@ import { profile } from "../../data/profile";
 import "../../index.scss";
 import "./Profile.scss";
 import { TFunction } from "i18next";
+import telephoneIcon from "../../assets/telephone.svg";
+import emailIcon from "../../assets/email.svg";
+import webIcon from "../../assets/web.svg";
 
 interface ProfileProps {
   t: TFunction;
@@ -16,7 +19,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
     document.getElementById("profile__about")?.removeAttribute("open");
   }
   return (
-    <section className="profile" aria-label="User's profile description">
+    <section className="profile" aria-label="Profile review">
       <div className="background__container h-[168px] 2xl:h-[288px] xl:h-[288px] lg:h-[288px] md:h-[248px] sm:h-[168px]">
         <img
           srcSet={`${profile.backgroundImage}?width=100 100w,
@@ -33,6 +36,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
       <div className="shadow" id="profile-js">
         <div className="profile__main h-[240px]">
           <div
+            title="User profile photo"
             className="profile__avatar w-[134px] h-[134px]  xl:w-[194px] xl:h-[194px] lg:w-[194px] lg:h-[194px] md:w-[194px] md:h-[194px] sm:w-[134px] sm:h-[134px]"
             style={{ backgroundImage: `url(${profile.photo}` }}
           >
@@ -51,19 +55,30 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
               </h3>
             </div>
             <div className="social__group">
-              <a href="tel:88888888888" className="social-box">
-                <div className="social social__phone"></div>
+              <a
+                href="tel:88888888888"
+                className="social-box"
+                aria-label="Call to user on the phone"
+              >
+                <img src={telephoneIcon} className="social" alt="phone icon" />
               </a>
-              <a href="mailto:exwadecoop@gmail.com" className="social-box">
-                <div className="social social__mail" tabIndex={-1}></div>
+              <a
+                href="mailto:exwadecoop@gmail.com"
+                className="social-box"
+                aria-label="Send an email to the user"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={emailIcon} className="social" alt="email icon" />
               </a>
               <a
                 href="https://github.com/exWade"
                 className="social-box"
+                aria-label="Go to user github"
                 target="_blank"
                 rel="noreferrer"
               >
-                <div className="social social__site"></div>
+                <img src={webIcon} className="social" alt="web icon" />
               </a>
             </div>
           </div>

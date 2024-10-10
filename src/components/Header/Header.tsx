@@ -3,7 +3,7 @@ import "../../index.scss";
 import "./Header.scss";
 import { profile } from "../../data/profile";
 import { i18n, TFunction } from "i18next";
-import useTheme  from "../../hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 import avatarMini from "../../assets/avatar_mini.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -54,44 +54,54 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       <nav className="header-container container m-auto">
         <div className="header-logo-container pr-2">
           <button
+            title="Go to browse page"
             className="header-logo"
             onClick={() => {
-              navigate("browse", {replace: false});
+              navigate("browse", { replace: false });
             }}
             id="truestory-logo"
           >
             <img
               src="https://cdn-icons-png.flaticon.com/128/2965/2965705.png"
               className="header-logo__camera"
-              alt="Truestory logo"
+              alt="Truestory camera logo"
             ></img>{" "}
             <span className="hidden xl:inline lg:inline md:inline sm:hidden align-bottom h-[26px]">
               Truestory
             </span>{" "}
           </button>
-          <div className="switch-lang" id="switchLang">
+          <div
+            className="switch-lang"
+            id="switchLang"
+            aria-label="Change app language"
+          >
             <div className="langs__layout">
               <ul className="langs">
                 <li
+                  aria-label="Switch to english language"
                   className="langs__item"
                   data-lang="en"
                   onClick={() => changeLang("en")}
                 >
-                  <div className="flag en"></div> <span>English</span> 
+                  <div className="flag en"></div> <span>English</span>
                 </li>
                 <li
+                  aria-label="Switch to turkish language"
                   className="langs__item"
                   data-lang="tk"
                   onClick={() => changeLang("tk")}
                 >
-                  <div className="flag tk"></div><span>Türkçe</span> 
+                  <div className="flag tk"></div>
+                  <span>Türkçe</span>
                 </li>
                 <li
+                  aria-label="Switch to serbian language"
                   className="langs__item"
                   data-lang="rs"
                   onClick={() => changeLang("rs")}
                 >
-                  <div className="flag rs"></div><span>Српски</span> 
+                  <div className="flag rs"></div>
+                  <span>Српски</span>
                 </li>
               </ul>
             </div>
@@ -112,17 +122,19 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
               <div className="magnifier"></div>
             </div>
           </div>
-          <div
+          <button
+            aria-label="Change app theme"
             className="switch-mode"
             id="switch-mode"
             onClick={toggleTheme}
-          ></div>
+          ></button>
 
           <div>
             <button
+              title="Go to profile page"
               className="header-info__mini"
               onClick={() => {
-                navigate("/", {replace: false});
+                navigate("/", { replace: false });
               }}
             >
               <div

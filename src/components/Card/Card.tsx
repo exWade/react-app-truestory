@@ -29,13 +29,21 @@ export function Card({ card, onModal }: CardProps) {
           alt={card.title}
           onError={(event) => {
             const target = event.target as HTMLImageElement;
-            target.src = `https://placehold.co/280x280?text=${card.title}`}}
+            target.src = `https://placehold.co/280x280?text=${card.title}`;
+          }}
         />
       </div>
-      <div className="image-caption">{card.title}</div>
-      <div className="description hidden">{card.description || card.title}</div>
+      <div className="image-caption" aria-label="Image caption">
+        {card.title}
+      </div>
+      <div className="description hidden" aria-label="Card description">
+        {card.description || card.title}
+      </div>
       <div className="addition">
-        <div className="addition-wrapper">
+        <div
+          className="addition-wrapper"
+          aria-label="Place where photo was taken and that date"
+        >
           {card.place || "Unkown place"}, {card.year || today.getFullYear()}
         </div>
       </div>

@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-[88px]">
       <Header searching={handleSearchQuery} i18n={i18n} t={t} />
 
       <Routes>

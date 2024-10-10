@@ -122,27 +122,11 @@
         will-change: transform;
 
         .social {
-          height: inherit;
-          width: inherit;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-          background-origin: border-box;
+          height: 100%;
+          max-width: 100%;
+          object-fit: contain;
           filter: var(--inverting-icon-color);
           // transition: filter 0.5s ease;
-        }
-
-        .social__phone {
-          background-image: url("../../assets/telephone.svg");
-        }
-
-        .social__mail {
-          width: 24px;
-          background-image: url("../../assets/email.svg");
-        }
-
-        .social__site {
-          background-image: url("../../assets/web.svg");
         }
 
         &:hover {

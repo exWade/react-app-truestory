@@ -4,7 +4,7 @@ header {
   position: fixed;
   top: 0;
   width: 100% !important;
-  height: 64px;
+  height: 56px; // 64px
   font-size: 24px;
   background-color: var(--header-bg-color);
   z-index: 10;
@@ -16,7 +16,6 @@ header {
     display: flex;
     position: relative;
     justify-content: space-between;
-
 
     .header-logo-container {
       display: flex;
@@ -261,8 +260,6 @@ header {
         transform: scale(1.15);
       }
 
-     
-
       .header-info__mini {
         user-select: none;
         // pointer-events: none;
@@ -302,17 +299,13 @@ header {
   }
 }
 
-
 @media screen and (max-width: 450px) {
-  
   .nickname-mini {
     display: none !important;
   }
- 
 }
 
 @media screen and (max-width: 365px) {
-  
   .header-logo__camera {
     display: none !important;
   }
@@ -324,5 +317,4 @@ header {
   .avatar-mini {
     margin-right: 0px !important;
   }
- 
 }
