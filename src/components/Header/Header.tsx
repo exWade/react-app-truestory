@@ -46,6 +46,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
       switchLang?.classList.add(language);
       i18n.changeLanguage(language);
       document.documentElement.lang = language;
+      location.reload();
     }
   };
 
@@ -70,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
               Truestory
             </span>{" "}
           </button>
-          <div
+          <button
             className="switch-lang"
             id="switchLang"
             aria-label="Change app language"
@@ -78,6 +79,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
             <div className="langs__layout">
               <ul className="langs">
                 <li
+                  tabIndex={0}
                   aria-label="Switch to english language"
                   className="langs__item"
                   data-lang="en"
@@ -86,6 +88,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                   <div className="flag en"></div> <span>English</span>
                 </li>
                 <li
+                  tabIndex={0}
                   aria-label="Switch to turkish language"
                   className="langs__item"
                   data-lang="tk"
@@ -95,6 +98,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                   <span>Türkçe</span>
                 </li>
                 <li
+                  tabIndex={0}
                   aria-label="Switch to serbian language"
                   className="langs__item"
                   data-lang="rs"
@@ -105,7 +109,7 @@ const Header: React.FC<HeaderProps> = ({ searching, i18n, t }) => {
                 </li>
               </ul>
             </div>
-          </div>
+          </button>
         </div>
 
         <div className="header-righside">

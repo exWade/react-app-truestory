@@ -130,19 +130,22 @@ header {
               background-size: contain;
             }
 
-            &:hover {
+            &:hover,
+            &:focus {
               display: flex;
               transition: display 2s linear;
             }
           }
 
-          &:hover .langs {
+          &:hover .langs,
+          &:focus .langs {
             display: flex;
             transition: display 2s linear;
           }
         }
 
-        &:hover .langs__layout {
+        &:hover .langs__layout,
+        &:focus .langs__layout {
           display: flex;
         }
 
@@ -195,7 +198,7 @@ header {
             background-color: var(--nav-input-color);
             color: var(--text-color);
             font-size: 16px;
-            padding: 0px 8px 0 32px;
+            padding: 0px 4px 0 32px;
 
             transition: outline-color 0.3s linear;
           }
@@ -317,4 +320,12 @@ header {
   .avatar-mini {
     margin-right: 0px !important;
   }
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }

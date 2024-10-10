@@ -17,6 +17,7 @@ export function Card({ card, onModal }: CardProps) {
   return (
     <div className="photo-card-content">
       <div
+        tabIndex={0}
         className="card-img-container"
         onClick={() => {
           handleModalOpening(card);

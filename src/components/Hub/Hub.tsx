@@ -2,17 +2,14 @@ import { useContext, useEffect } from "react";
 import "./Hub.scss";
 import { ModalContext } from "../../context/ModalContext";
 
-
 const Hub = () => {
-
   const { openCreate } = useContext(ModalContext);
-
 
   console.log("render");
   useEffect(() => {
     const progressBar = document.getElementById("progBar");
     console.log("useEffect render");
-    
+
     function toTopHide() {
       if (
         document.body.scrollTop > 200 ||
@@ -64,6 +61,7 @@ const Hub = () => {
       >
         <button
           className="toTop-Btn rounded-[25%] text-white text-2xl select-none"
+          aria-label="Go to top of page"
           onClick={() => {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -75,6 +73,7 @@ const Hub = () => {
 
       <button
         className=" add-Btn fixed bottom-4 right-4 rounded-full text-white text-2xl select-none"
+        aria-label="Add new card to profile"
         onClick={openCreate}
       >
         +
