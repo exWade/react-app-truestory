@@ -50,7 +50,7 @@ html {
 body {
   color: var(--text-color);
   min-height: 100vh !important;
-  font-family: Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
   // scrollbar-gutter: stable;
   background-color: var(--bg-color);
@@ -131,5 +131,5 @@ body {
 
 a:focus,
 button:focus {
-  outline: solid 2px #227fdd;
+  outline: dotted 2px #227fdd;
 }

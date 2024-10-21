@@ -4,10 +4,11 @@
 
   width: 337.5px; // *0.9
   height: 427.5px; // *0.9
-  font-size: 19.44px; // *0.9
-  padding-left: 30.375px; // *0.9
-  padding-top: 24px;
-  padding-right: 30.375px; // *0.9
+  font-size: 18px; // *0.9
+  // padding-left: 30.375px; // *0.9
+  padding: 0px 0px 24px 0px;
+  // padding-bottom: 24px;
+  // padding-right: 30.375px; // *0.9
   box-shadow: 2px 4px 12px #00000014;
   border-radius: 16px;
   background-color: var(--bg-card-color);
@@ -15,7 +16,6 @@
   // height            : calc(456px*0.9*0.9);
 
   // border: 1px solid #d0d3d8;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   // При изменении размера экрана умножить 0.9 на ширину высоту и тд (смотриться криво)
   -webkit-transition: box-shadow 0.25s linear;
   -moz-transition: box-shadow 0.25s linear;
@@ -32,7 +32,6 @@
     transition: box-shadow 0.25s linear;
   }
 
-
   &:active {
     cursor: grabbing;
   }
@@ -46,8 +45,8 @@
     //  transform: translate(0);
 
     .card-img-container {
-      height: 270px; // *0.9
-      border-radius: 8px;
+      height: 320px; // *0.9
+      border-radius: 16px 16px 0px 0px;
       width: auto;
       // will-change: transform;
       cursor: pointer;
@@ -82,10 +81,11 @@
     }
 
     .image-caption {
-      margin-top: calc(12px * 0.9);
+      margin-top: 16px;
       overflow: hidden;
       min-height: 1.86em;
       text-overflow: ellipsis;
+      text-align: center;
       font-weight: 600;
       line-height: 1.25;
       will-change: transform;
@@ -99,14 +99,12 @@
     }
 
     .addition {
-      position: absolute;
       display: flex;
+      padding-top: 0px;
+      height: 24px;
       width: 100%;
-      justify-content: flex-end;
-      text-align: right;
-      bottom: 16px;
-      right: 0px;
-      font-weight: bold;
+      justify-content: center;
+      text-align: center;
       // will-change: unset !important;
       backface-visibility: hidden;
       transform: translateZ(0); /* Добавляем аппаратное ускорение */
@@ -118,7 +116,7 @@
         // will-change: unset !important; /* Убираем will-change */
         backface-visibility: hidden;
         transform: translateZ(0);
-        transition: width 0.3s;
+        transition: width 0.5s;
         /* , color .5s ease */
       }
 

@@ -54,7 +54,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
                 {profile.firstName}
               </h3>
             </div>
-            <div className="social__group">
+            <address className="social__group">
               <a
                 href="tel:88888888888"
                 className="social-box"
@@ -80,7 +80,7 @@ const Profile: React.FC<ProfileProps> = ({ t, counted }) => {
               >
                 <img src={webIcon} className="social" alt="web icon" />
               </a>
-            </div>
+            </address>
           </div>
         </div>
 

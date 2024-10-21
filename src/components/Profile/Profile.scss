@@ -18,7 +18,7 @@
 .shadow {
   position: absolute;
   background-color: var(--bg-card-color);
-  border-radius: 16px;
+  border-radius: 0px 0px 16px 16px;
   height: 180px * 0.9;
   padding: 0px 27.3375px;
   //  max-width : calc(1622px*0.9*0.9);
@@ -270,9 +270,9 @@
       }
     }
   }
-  .profile {
-    // padding: 0px 8px;
-  }
+  // .profile {
+  //   // padding: 0px 8px;
+  // }
 }
 // // lg
 @media screen and (max-width: 1024px) {
